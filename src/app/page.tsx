@@ -23,15 +23,15 @@ export default function HomePage() {
         <div className="stats-bar__inner">
           <div className="stats-bar__item">
             <div className="stats-bar__number">{business.stats.yearsInBusiness}+</div>
-            <div className="stats-bar__label">Years in Business</div>
+            <div className="stats-bar__label">Years</div>
           </div>
           <div className="stats-bar__item">
             <div className="stats-bar__number">{business.stats.brandsStocked}+</div>
-            <div className="stats-bar__label">Premium Brands</div>
+            <div className="stats-bar__label">Brands</div>
           </div>
           <div className="stats-bar__item">
             <div className="stats-bar__number">{business.stats.tileVariety.toLocaleString()}+</div>
-            <div className="stats-bar__label">Tile Designs</div>
+            <div className="stats-bar__label">Designs</div>
           </div>
           <div className="stats-bar__item">
             <div className="stats-bar__number">{business.rating}</div>
@@ -40,12 +40,47 @@ export default function HomePage() {
         </div>
       </div>
 
+      {/* ===== BRAND STORY ===== */}
+      <section className="section" style={{ textAlign: "center" }}>
+        <div className="container" style={{ maxWidth: "720px" }}>
+          <p className="eyebrow" style={{ textAlign: "center" }}>Our Story</p>
+          <h2
+            style={{
+              fontFamily: "var(--font-heading)",
+              fontSize: "clamp(2rem, 4vw, 3.5rem)",
+              fontWeight: 400,
+              lineHeight: 1.15,
+              letterSpacing: "-0.02em",
+              color: "var(--color-text-heading)",
+              marginBottom: "1.5rem",
+            }}
+          >
+            Two decades of crafting beautiful spaces across Ranchi
+          </h2>
+          <p
+            style={{
+              fontSize: "var(--fs-base)",
+              color: "var(--color-text-light)",
+              lineHeight: 1.8,
+              fontWeight: 300,
+              maxWidth: "560px",
+              margin: "0 auto",
+            }}
+          >
+            From handpicked premium tiles to curated sanitaryware collections,
+            we bring the world&apos;s finest surfaces to your doorstep. Every space
+            we touch becomes a statement of timeless design.
+          </p>
+        </div>
+      </section>
+
       {/* ===== CATEGORIES ===== */}
-      <section className="section" id="categories">
+      <section className="section section--alt" id="categories">
         <div className="container">
+          <p className="eyebrow" style={{ textAlign: "center" }}>Collections</p>
           <h2 className="section__title">Shop by Space</h2>
           <p className="section__subtitle">
-            Curated collections for every room
+            Curated collections for every room in your home
           </p>
           <div className="categories-grid">
             {categories.map((cat) => (
@@ -75,11 +110,12 @@ export default function HomePage() {
       </section>
 
       {/* ===== FEATURED PRODUCTS ===== */}
-      <section className="section section--alt" id="featured">
+      <section className="section" id="featured">
         <div className="container">
-          <h2 className="section__title">Featured Collection</h2>
+          <p className="eyebrow" style={{ textAlign: "center" }}>Featured</p>
+          <h2 className="section__title">Latest Arrivals</h2>
           <p className="section__subtitle">
-            Hand-picked from our latest arrivals
+            Hand-picked from our newest collections
           </p>
           <div className="products-grid">
             {featuredProducts.slice(0, 6).map((product) => (
@@ -88,18 +124,19 @@ export default function HomePage() {
           </div>
           <div style={{ textAlign: "center", marginTop: "3rem" }}>
             <Link href="/products" className="btn btn--outline btn--lg">
-              View All Products
+              Explore All Products
             </Link>
           </div>
         </div>
       </section>
 
       {/* ===== GALLERY ===== */}
-      <section className="section" id="gallery">
+      <section className="section section--alt" id="gallery">
         <div className="container">
+          <p className="eyebrow" style={{ textAlign: "center" }}>Inspiration</p>
           <h2 className="section__title">Real Installations</h2>
           <p className="section__subtitle">
-            How our tiles transform homes across Ranchi
+            How our surfaces transform homes across Ranchi
           </p>
           <div className="gallery-grid">
             <div className="gallery-item">
@@ -151,12 +188,18 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+          <div style={{ textAlign: "center", marginTop: "3rem" }}>
+            <Link href="/gallery" className="btn btn--outline btn--lg">
+              View Full Gallery
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* ===== BRANDS ===== */}
-      <section className="section section--alt" id="brands">
-        <div className="container">
+      <section className="section" id="brands">
+        <div className="container" style={{ textAlign: "center" }}>
+          <p className="eyebrow" style={{ textAlign: "center" }}>Partners</p>
           <h2 className="section__title">Brands We Stock</h2>
           <p className="section__subtitle">
             Authorised dealer for India&apos;s most trusted tile &amp; sanitaryware brands
@@ -165,7 +208,7 @@ export default function HomePage() {
             style={{
               display: "flex",
               flexWrap: "wrap",
-              gap: "0.75rem",
+              gap: "0.5rem",
               justifyContent: "center",
               marginTop: "2rem",
             }}
@@ -175,24 +218,24 @@ export default function HomePage() {
                 key={brand}
                 href="/brands"
                 style={{
-                  padding: "0.6rem 1.5rem",
+                  padding: "0.65rem 1.75rem",
                   border: "1px solid var(--color-border)",
                   background: "transparent",
                   fontFamily: "var(--font-body)",
                   fontSize: "var(--fs-xs)",
                   fontWeight: 400,
-                  letterSpacing: "0.08em",
+                  letterSpacing: "0.1em",
                   textTransform: "uppercase",
                   color: "var(--color-text-light)",
                   textDecoration: "none",
-                  transition: "border-color 0.2s, color 0.2s",
+                  transition: "all 0.3s ease",
                 }}
               >
                 {brand}
               </Link>
             ))}
           </div>
-          <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
+          <div style={{ marginTop: "2.5rem" }}>
             <Link href="/brands" className="btn btn--outline">
               View All Brands
             </Link>
@@ -201,25 +244,25 @@ export default function HomePage() {
       </section>
 
       {/* ===== TESTIMONIALS ===== */}
-      <section className="section" id="testimonials">
+      <section className="section section--alt" id="testimonials">
         <div className="container">
+          <p className="eyebrow" style={{ textAlign: "center" }}>Reviews</p>
           <h2 className="section__title">What Customers Say</h2>
           <p className="section__subtitle">
-            {business.rating} · {business.reviews} reviews on Google
+            Rated {business.rating} stars across {business.reviews} Google reviews
           </p>
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-              gap: "1.5rem",
-              marginTop: "2rem",
+              gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
+              gap: "2px",
             }}
           >
             {testimonials.slice(0, 3).map((t) => (
               <TestimonialCard key={t.id} testimonial={t} />
             ))}
           </div>
-          <div style={{ textAlign: "center", marginTop: "2.5rem" }}>
+          <div style={{ textAlign: "center", marginTop: "3rem" }}>
             <Link href="/testimonials" className="btn btn--outline">
               Read All Reviews
             </Link>

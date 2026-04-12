@@ -1,300 +1,255 @@
-You are an expert full-stack developer, product designer, and SEO strategist.
+# Krishna Tiles — Website Vision & PRD
 
-Build a production-ready, mobile-first website for a local tile and sanitaryware retailer called **Krishna Tiles**.
+## PURPOSE
 
-This is NOT an e-commerce website.
-It is a lead-generation focused digital showroom designed to:
+Production-ready, mobile-first website for **Krishna Tiles** — a local tile and sanitaryware retailer in Ranchi, India.
 
-* Increase showroom visits
-* Generate WhatsApp and call inquiries
-* Rank on Google for local SEO keywords
-
----
-
-# CONTEXT
-
-Business Type: Local tile & sanitaryware retailer (India)
-Primary Goal: Lead generation (calls, WhatsApp, store visits)
-Secondary Goal: Product showcase + trust building
+**NOT an e-commerce website.** This is a lead-generation focused digital showroom designed to:
+- Increase showroom visits
+- Generate WhatsApp and call inquiries
+- Rank on Google for local SEO keywords
 
 Users browse online but purchase offline.
 
 ---
 
-# CORE REQUIREMENTS
+## DESIGN VISION — "Luxury Showroom Experience"
 
-## 1. TECH STACK
+### Core Philosophy
 
-* Frontend: Next.js (App Router)
-* Styling: Tailwind CSS
-* Backend: Supabase
-* Image optimization: Next/Image
-* SEO: Server-side rendering + metadata
+Think **Apple Store meets architecture studio**. This is NOT a typical tile shop website. It's a premium digital showroom that makes people feel like they're walking into a luxury space.
 
----
+### Design Principles
 
-## 2. DESIGN DIRECTION
+1. **Heavy whitespace** — let products breathe
+2. **One dominant visual per screen** — no clutter
+3. **Large, elegant typography** — minimal words, maximum impact
+4. **Neutral palette** — white, off-white, warm grey, charcoal, deep black
+5. **Subtle parallax/fades** — not flashy, just refined
+6. **Editorial design language** — like a design magazine, not a retail store
 
-Create a premium, modern, minimal UI:
+### Color Palette
 
-* Clean white background
-* Large high-quality product images
-* Warm earthy tones (beige, brown, terracotta)
-* Premium typography (serif + sans-serif combo)
-* Spacious layout (luxury showroom feel)
+| Role | Color |
+|------|-------|
+| Background | `#FFFFFF` / `#FAFAF8` (warm off-white) |
+| Text Primary | `#1A1A1A` (near black) |
+| Text Secondary | `#6B6B6B` (warm grey) |
+| Accent | `#0492C5` (brand cyan from logo) |
+| Accent Warm | `#C4956A` (warm bronze/terracotta) |
+| Border/Divider | `#E8E6E3` (light warm grey) |
 
----
+### Typography
 
-## 3. GLOBAL UX FEATURES (VERY IMPORTANT)
-
-Implement across all pages:
-
-* Sticky Call Button (mobile + desktop)
-* Floating WhatsApp Button (primary CTA)
-* “Get Directions” (Google Maps link)
-* Fast loading (<2 seconds)
-* Fully responsive (mobile-first)
-
----
-
-## 4. WEBSITE STRUCTURE
-
-Create the following pages:
-
-* Homepage
-* About Us
-* Tiles Category Page
-* Sanitaryware Category Page
-* Product Listing Page
-* Product Detail Page
-* Brand Page
-* Gallery / Inspiration Page
-* Testimonials Page
-* Contact / Visit Store Page
-* FAQ Page
-* Blog Page
-* Local SEO Landing Pages (e.g., "Tiles in Ranchi")
+- **Headings**: Large serif or elegant sans-serif (e.g., `Playfair Display` or `Inter` with wide letter-spacing)
+- **Body**: Clean sans-serif (`Inter` or `DM Sans`)
+- **Size scale**: Generous — hero headings at 4-6rem, section titles at 2.5-3rem
+- **Letter-spacing**: Wide on uppercase labels (0.15-0.25em)
 
 ---
 
-## 5. PAGE REQUIREMENTS
+## TECH STACK
 
-### HOMEPAGE
-
-* Hero section with headline + CTA (Call / WhatsApp)
-* Category previews (Tiles / Sanitaryware)
-* Featured products
-* Brand logos section
-* Testimonials preview
-* Instagram feed
-* Strong CTA section
+- Frontend: Next.js (App Router)
+- Styling: Tailwind CSS
+- Backend: Supabase
+- Image optimization: Next/Image
+- SEO: Server-side rendering + metadata
+- Deployment: Vercel (auto-deploy from GitHub)
+- Domain: krishnatiles.in
 
 ---
 
-### CATEGORY + LISTING PAGES
+## WEBSITE STRUCTURE
 
-* Filters:
+### Page Flow
 
-  * Size
-  * Color
-  * Finish
-  * Type
-* Grid layout
-* Product cards with:
-
-  * Image
-  * Name
-  * Quick “Enquire on WhatsApp”
-
----
-
-### PRODUCT DETAIL PAGE
-
-* Large image gallery
-* Product specs
-* Use cases (Bathroom / Kitchen / Living)
-* CTA:
-
-  * WhatsApp
-  * Call
-  * Visit Store
+1. **Homepage** — Immersive hero → Story scroll → Collections → Featured → Brands → Testimonials → CTA
+2. **About Us** — Brand story, showroom photos, team
+3. **Products** — Filterable product grid
+4. **Product Detail** — Large gallery, specs, CTAs
+5. **Brands** — Premium brand showcase
+6. **Gallery / Inspiration** — Room-based visual showcase
+7. **Testimonials** — Customer reviews
+8. **Contact / Visit Store** — Map, timings, inquiry form
+9. **FAQ** — Common questions
+10. **Blog** — SEO articles
+11. **Local SEO Pages** — "Tiles in Ranchi" etc.
 
 ---
 
-### GALLERY / INSPIRATION PAGE
+## HOMEPAGE SECTIONS
 
-* Room-based inspiration:
+### 1. Hero (Fullscreen)
 
-  * Bathroom
-  * Kitchen
-  * Living Room
-* Before/after transformations
+- Full-viewport height
+- Center: Single stunning tile/space image
+- Soft shadow, floating feel
+- Minimal text overlay: brand name + one-line tagline
+- Subtle scroll indicator
 
----
+### 2. Scroll Transition — Brand Story
 
-### CONTACT PAGE
+- As user scrolls: smooth parallax reveals
+- "Crafting spaces since [year]" or similar
+- One powerful line per scroll section
+- Think Apple product page storytelling
 
-* Embedded Google Map
-* Store timings
-* Click-to-call button
-* Inquiry form
-* WhatsApp CTA
+### 3. Collection Grid
 
----
+- Gallery-style layout (not typical e-commerce grid)
+- Large hero images for each category
+- Hover: subtle zoom + overlay text
+- Categories: Tiles, Sanitaryware, Taps, Kitchens
 
-### BLOG PAGE
+### 4. Featured Products
 
-* SEO-friendly articles
-* Categories + internal linking
+- 3-4 products max, editorial layout
+- Large images, minimal text
+- "Explore" CTA (not "Buy Now")
 
----
+### 5. Brand Showcase
 
-## 6. LEAD GENERATION FEATURES (CRITICAL)
+- Clean logo grid or horizontal scroll
+- "Authorised dealer" messaging
+- Premium brand presentation
 
-* Floating WhatsApp button (always visible)
-* Sticky call button
-* Inquiry form (name, phone, requirement)
-* Callback request option
-* Product-level enquiry CTA
+### 6. Testimonials
 
----
+- Clean cards, Google rating prominent
+- Real customer names and context
 
-## 7. SEO IMPLEMENTATION (VERY IMPORTANT)
+### 7. CTA Strip
 
-### On-page SEO:
-
-* Dynamic meta titles/descriptions
-* H1, H2 structured headings
-* Image alt text
-* Clean URLs
-
-### Target Keywords:
-
-* tile shop in Ranchi
-* sanitaryware store near me
-* bathroom tiles in Ranchi
-* best tiles showroom in Ranchi
-
-### Local SEO:
-
-* Google Business Profile integration
-* Location schema
-* NAP consistency
-
-### Schema Markup:
-
-* LocalBusiness
-* Product
-* FAQ
+- Strong conversion section
+- WhatsApp + Call + Visit Store
+- "Experience our showroom" messaging
 
 ---
 
-## 8. INSTAGRAM INTEGRATION
+## GLOBAL UX FEATURES
 
-* Fetch and display Instagram feed
-* Show latest posts on homepage
-* Link to Instagram profile
-* Enable product inspiration discovery
-
----
-
-## 9. ADMIN PANEL (SUPABASE)
-
-Build a simple CMS with:
-
-* Add/Edit/Delete Products
-* Upload images
-* Manage categories
-* Manage blog posts
-* View inquiries
+- **Floating WhatsApp Button** — always visible, primary CTA
+- **Sticky Call Button** — mobile + desktop
+- **"Get Directions"** — Google Maps link
+- **Fast loading** — under 2 seconds
+- **Fully responsive** — mobile-first
+- **Smooth scroll** — subtle animations on scroll
 
 ---
 
-## 10. PERFORMANCE OPTIMIZATION
+## PRODUCT PAGES
 
-* Lazy loading images
-* Use Next.js Image optimization
-* Minimize JS bundle
-* Lighthouse score target: 90+
+### Listing Page
+- Filters: Size, Color, Finish, Type
+- Grid layout with large images
+- Product cards: Image + Name + "Enquire on WhatsApp"
 
----
-
-## 11. COMPONENT SYSTEM
-
-Create reusable components:
-
-* Navbar
-* Footer
-* Product Card
-* Filter Sidebar
-* CTA Buttons (Call / WhatsApp)
-* Testimonial Card
-* Blog Card
+### Detail Page
+- Large image gallery
+- Product specs table
+- Use cases (Bathroom / Kitchen / Living)
+- CTAs: WhatsApp, Call, Visit Store
+- Related products
 
 ---
 
-## 12. DATA STRUCTURE (SUPABASE)
+## SEO IMPLEMENTATION
 
-Tables:
+### On-page
+- Dynamic meta titles/descriptions per page
+- H1, H2 structured headings
+- Image alt text everywhere
+- Clean, semantic URLs
 
-* products
-* categories
-* brands
-* inquiries
-* blog_posts
+### Target Keywords
+- tile shop in Ranchi
+- sanitaryware store near me
+- bathroom tiles in Ranchi
+- best tiles showroom in Ranchi
 
-Each product should include:
+### Local SEO
+- Google Business Profile integration
+- LocalBusiness schema
+- NAP consistency
 
-* name
-* category
-* images
-* size
-* finish
-* description
-
----
-
-## 13. ADVANCED FEATURES (IF POSSIBLE)
-
-* Tile visualizer (basic version)
-* Related products
-* Recently viewed products
+### Schema Markup
+- LocalBusiness
+- Product
+- FAQ
 
 ---
 
-## 14. OUTPUT REQUIREMENTS
+## LEAD GENERATION (CRITICAL)
 
-Generate:
-
-1. Full Next.js project structure
-2. Key pages with working UI
-3. Reusable components
-4. Supabase schema
-5. Example data
-6. SEO metadata implementation
+- Floating WhatsApp button (always visible)
+- Sticky call button
+- Inquiry form (name, phone, requirement)
+- Product-level enquiry CTA
+- Callback request option
 
 ---
 
-# IMPORTANT RULES
+## COMPONENT SYSTEM
 
-* Prioritize conversion over aesthetics
-* Always include CTA (Call / WhatsApp)
-* Keep UX extremely simple
-* Optimize for Indian mobile users
-* Do not build checkout or cart system
+Reusable components:
+- Header/Navbar
+- Footer
+- HeroSection
+- ProductCard
+- CategoryCard
+- TestimonialCard
+- CTAStrip
+- TrustSection
+- FilterSidebar
+- BlogCard
 
 ---
 
-# FINAL GOAL
+## DATA STRUCTURE (SUPABASE)
+
+Tables: products, categories, brands, inquiries, blog_posts
+
+Each product: name, category, images, size, finish, description
+
+---
+
+## PERFORMANCE
+
+- Lazy loading images
+- Next.js Image optimization
+- Minimal JS bundle
+- Lighthouse score target: 90+
+
+---
+
+## PRIORITY ORDER
+
+1. Functionality
+2. Performance
+3. SEO
+4. Design (luxury aesthetic)
+
+---
+
+## RULES
+
+- Prioritize conversion over aesthetics
+- Always include CTA (Call / WhatsApp)
+- Keep UX extremely simple
+- Optimize for Indian mobile users
+- No checkout or cart system
+- No authentication unless asked
+- No payment integration
+
+---
+
+## FINAL GOAL
 
 This website should function as a 24/7 sales system that:
+- Attracts users via SEO
+- Builds trust via premium design
+- Converts via WhatsApp and calls
+- Drives showroom visits
 
-* Attracts users via SEO
-* Builds trust via design
-* Converts via WhatsApp and calls
-* Drives showroom visits
-
----
-
-Start building the complete project.
-Output only code and necessary structure. Do not explain.
+The design should make Krishna Tiles feel like a **luxury destination**, not just another tile shop.

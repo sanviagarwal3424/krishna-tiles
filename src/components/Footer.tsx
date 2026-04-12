@@ -7,14 +7,14 @@ export default function Footer() {
       <div className="container">
         <div className="footer__grid">
           <div>
-            <div className="footer__brand">◈ {business.name}</div>
+            <div className="footer__brand">{business.name}</div>
             <p className="footer__desc">
-              {business.subTagline}. Visit our showroom to explore 5,000+ tile
+              {business.subTagline}. Visit our showroom to explore {business.stats.tileVariety.toLocaleString()}+ tile
               designs from India&apos;s top brands.
             </p>
-            <div style={{ display: "flex", gap: "0.75rem" }}>
-              <a href={getCallLink()} className="btn btn--primary btn--sm">
-                📞 Call Us
+            <div style={{ display: "flex", gap: "0.5rem" }}>
+              <a href={getCallLink()} className="btn btn--outline-light btn--sm">
+                Call Us
               </a>
               <a
                 href={getWhatsAppLink()}
@@ -22,7 +22,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="btn btn--whatsapp btn--sm"
               >
-                💬 WhatsApp
+                WhatsApp
               </a>
             </div>
           </div>
@@ -45,21 +45,23 @@ export default function Footer() {
               <Link href="/products?category=kitchen" className="footer__link">Kitchen Tiles</Link>
               <Link href="/products?category=outdoor" className="footer__link">Outdoor Tiles</Link>
               <Link href="/products?category=sanitaryware" className="footer__link">Sanitaryware</Link>
+              <Link href="/brands" className="footer__link">All Brands</Link>
+              <Link href="/gallery" className="footer__link">Gallery</Link>
             </nav>
           </div>
 
           <div>
             <h4 className="footer__heading">Visit Our Store</h4>
             <div className="footer__contact-item">
-              <span className="footer__contact-icon">📍</span>
+              <span className="footer__contact-icon">&#x2316;</span>
               <span>{business.address.full}</span>
             </div>
             <div className="footer__contact-item">
-              <span className="footer__contact-icon">📞</span>
+              <span className="footer__contact-icon">&#x260E;</span>
               <a href={getCallLink()}>{business.phoneDisplay}</a>
             </div>
             <div className="footer__contact-item">
-              <span className="footer__contact-icon">🕐</span>
+              <span className="footer__contact-icon">&#x25F7;</span>
               <span>
                 {business.timings.note}: {business.timings.weekdays}
                 <br />
@@ -70,8 +72,8 @@ export default function Footer() {
         </div>
 
         <div className="footer__bottom">
-          <span>© {new Date().getFullYear()} {business.name}. All rights reserved.</span>
-          <span>Ranchi&apos;s Trusted Tile Destination</span>
+          <span>&copy; {new Date().getFullYear()} {business.name}. All rights reserved.</span>
+          <span>Ranchi&apos;s Premium Tile Destination</span>
         </div>
       </div>
     </footer>

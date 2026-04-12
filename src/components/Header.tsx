@@ -13,7 +13,6 @@ export default function Header() {
     { href: "/products", label: "Products" },
     { href: "/brands", label: "Brands" },
     { href: "/gallery", label: "Gallery" },
-    { href: "/blog", label: "Blog" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
   ];
@@ -26,9 +25,9 @@ export default function Header() {
             <Image
               src="/images/logo.svg"
               alt="Krishna Tiles"
-              width={140}
-              height={70}
-              style={{ objectFit: "contain", mixBlendMode: "multiply" }}
+              width={130}
+              height={65}
+              style={{ objectFit: "contain" }}
               priority
             />
           </Link>
@@ -46,11 +45,14 @@ export default function Header() {
               href={getCallLink()}
               className="header__cta-link"
               aria-label={`Call ${business.phoneDisplay}`}
-              style={{ display: "flex", alignItems: "center", gap: "0.4rem" }}
+              style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" opacity="0.6">
                 <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11 21 3 13 3 5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
               </svg>
+              <span style={{ fontSize: "var(--fs-xs)", letterSpacing: "0.06em" }}>
+                {business.phoneDisplay}
+              </span>
             </a>
           </div>
 
@@ -80,7 +82,6 @@ export default function Header() {
         ))}
         <div className="mobile-nav__cta">
           <a href={getCallLink()} className="btn btn--primary btn--lg">
-            <span className="btn__icon">📞</span>
             Call Now — {business.phoneDisplay}
           </a>
           <a
@@ -89,8 +90,7 @@ export default function Header() {
             rel="noopener noreferrer"
             className="btn btn--whatsapp btn--lg"
           >
-            <span className="btn__icon">💬</span>
-            WhatsApp
+            WhatsApp Us
           </a>
         </div>
       </div>
