@@ -23,7 +23,7 @@ export default function Header() {
         <div className="header__inner">
           <Link href="/" className="header__logo">
             <Image
-              src="/images/logo.svg"
+              src="/logo.svg"
               alt="Krishna Tiles"
               width={150}
               height={93}
