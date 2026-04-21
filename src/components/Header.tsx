@@ -25,9 +25,9 @@ export default function Header() {
             <Image
               src="/images/logo.svg"
               alt="Krishna Tiles"
-              width={130}
-              height={65}
-              style={{ objectFit: "contain" }}
+              width={150}
+              height={93}
+              style={{ objectFit: "contain", maxHeight: "55px", width: "auto" }}
               priority
             />
           </Link>

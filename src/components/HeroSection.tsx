@@ -36,10 +36,10 @@ export default function HeroSection() {
         <Image
           src="/images/logo.svg"
           alt="Krishna Tiles | Sanitaryware | Taps | Kitchens"
-          width={560}
-          height={350}
+          width={640}
+          height={397}
           priority
-          style={{ width: "clamp(280px, 40vw, 560px)", height: "auto" }}
+          style={{ width: "clamp(260px, 45vw, 600px)", height: "auto" }}
         />
       </div>
 
