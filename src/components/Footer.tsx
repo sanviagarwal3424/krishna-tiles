@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { business, getCallLink, getWhatsAppLink } from "@/data/business";
 
 export default function Footer() {
@@ -7,7 +8,13 @@ export default function Footer() {
       <div className="container">
         <div className="footer__grid">
           <div>
-            <div className="footer__brand">{business.name}</div>
+            <Image
+              src="/logo-mark.svg"
+              alt={business.name}
+              width={180}
+              height={50}
+              className="footer__brand-img"
+            />
             <p className="footer__desc">
               {business.subTagline}. Visit our showroom to explore {business.stats.tileVariety.toLocaleString()}+ tile
               designs from India&apos;s top brands.
