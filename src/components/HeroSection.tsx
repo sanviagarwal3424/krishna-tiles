@@ -34,7 +34,7 @@ export default function HeroSection() {
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/logo-full.svg"
+          src="/images/logo.png"
           alt="Krishna Tiles | Sanitaryware | Taps | Kitchens"
           style={{ width: "clamp(260px, 45vw, 600px)", height: "auto" }}
         />

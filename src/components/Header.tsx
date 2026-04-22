@@ -52,10 +52,10 @@ export default function Header() {
           <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
             <Link href="/" className="header__logo" aria-label="Krishna Tiles home">
               <Image
-                src="/logo-mark.svg"
+                src="/images/logo.png"
                 alt="Krishna Tiles"
                 width={200}
-                height={56}
+                height={120}
                 className="header__logo-img"
                 priority
               />

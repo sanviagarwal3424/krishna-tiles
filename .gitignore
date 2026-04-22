@@ -45,3 +45,5 @@ next-env.d.ts
 # agent tooling (local-only)
 .claude/
 .vexp/
+.playwright-mcp/
+docs/superpowers/artifacts/

@@ -9,10 +9,10 @@ export default function Footer() {
         <div className="footer__grid">
           <div>
             <Image
-              src="/logo-mark.svg"
+              src="/images/logo.png"
               alt={business.name}
               width={180}
-              height={50}
+              height={108}
               className="footer__brand-img"
             />
             <p className="footer__desc">
