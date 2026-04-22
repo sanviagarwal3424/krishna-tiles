@@ -47,3 +47,4 @@ next-env.d.ts
 .vexp/
 .playwright-mcp/
 docs/superpowers/artifacts/
+.superpowers/
