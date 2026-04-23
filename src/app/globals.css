@@ -1682,3 +1682,306 @@ h1, h2, h3, h4, h5, h6 {
 @media (prefers-reduced-motion: reduce) {
   .rd-btn, .rd-btn * { transition: none !important; }
 }
+
+/* ================================================================ */
+/* ===== InteractiveHero ========================================== */
+/* ================================================================ */
+
+.ih {
+  --scroll-progress: 0;
+  position: relative;
+  height: 200vh;
+  background: var(--ink);
+  color: var(--bone);
+}
+
+.ih__stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+/* ----- Tile wall (desktop) ----- */
+.ih-wall {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 2px;
+  background: var(--graphite);
+  filter: saturate(calc(0.6 + 0.4 * var(--scroll-progress)))
+          brightness(calc(0.55 + 0.45 * var(--scroll-progress)));
+  transition: filter 200ms linear;
+}
+
+.ih-wall__item {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  background: var(--surface);
+  border: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.ih-wall__img {
+  object-fit: cover;
+}
+
+.ih-wall__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.6) 20%,
+    rgba(0, 0, 0, 0) 40%
+  );
+  opacity: 0;
+  transition: opacity 200ms ease;
+  pointer-events: none;
+}
+
+.ih-wall__name {
+  color: var(--bone);
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+.ih-wall__item:hover .ih-wall__overlay,
+.ih-wall__item:focus-visible .ih-wall__overlay,
+.ih-wall__item--active .ih-wall__overlay {
+  opacity: 1;
+}
+
+.ih-wall__item:focus-visible {
+  outline: 2px solid var(--accent-orange);
+  outline-offset: -2px;
+  z-index: 2;
+}
+
+/* ----- Crest ----- */
+.ih__crest {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: calc(1 - max(0, (var(--scroll-progress) - 0.3)) / 0.4);
+  transform: translateY(calc(var(--scroll-progress) * -30px))
+             scale(calc(1 - var(--scroll-progress) * 0.1));
+  transition: opacity 200ms linear, transform 200ms linear;
+  z-index: 10;
+}
+
+.ih__crest-inner {
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  background: rgba(11, 11, 12, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  max-width: 420px;
+}
+
+.ih__logo {
+  width: 220px;
+  height: auto;
+  margin: 8px 0;
+}
+
+.ih__hours {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--text-dim-on-dark);
+  margin-bottom: 20px;
+  letter-spacing: 0.05em;
+}
+
+.ih__ctas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ih__scroll-hint {
+  margin-top: 28px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-dim-on-dark);
+}
+
+/* Crest fully hidden in interactive state */
+.ih[style*="--scroll-progress: 1"] .ih__crest,
+.ih__stage .ih__crest {
+  /* opacity handled via calc above */
+}
+
+/* ----- Detail panel ----- */
+.ih-panel {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  width: 320px;
+  background: var(--ink);
+  color: var(--bone);
+  padding: 28px 24px;
+  border: 1px solid var(--graphite);
+  z-index: 60;
+  animation: ih-panel-in 240ms ease-out;
+}
+
+@keyframes ih-panel-in {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.ih-panel__close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--bone);
+  font-size: 24px;
+  line-height: 1;
+  border: 0;
+  cursor: pointer;
+}
+
+.ih-panel__close:focus-visible {
+  outline: 2px solid var(--accent-orange);
+  outline-offset: 2px;
+}
+
+.ih-panel__label {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim-on-dark);
+  margin-bottom: 12px;
+}
+
+.ih-panel__name {
+  color: var(--bone);
+  margin-bottom: 6px;
+}
+
+.ih-panel__meta {
+  color: var(--text-dim-on-dark);
+  margin-bottom: 16px;
+}
+
+.ih-panel__desc {
+  color: var(--bone);
+  margin-bottom: 24px;
+}
+
+.ih-panel__ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ih-panel__cta {
+  width: 100%;
+}
+
+/* ----- Mobile ----- */
+@media (max-width: 768px) {
+  .ih {
+    height: 100vh;
+  }
+  .ih__stage {
+    position: static;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 40vh 60vh;
+  }
+  .ih__crest {
+    position: static;
+    inset: auto;
+    opacity: 1 !important;
+    transform: none !important;
+    height: 40vh;
+    z-index: 1;
+  }
+  .ih__crest-inner {
+    padding: 20px;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .ih__logo {
+    width: 160px;
+  }
+  .ih__scroll-hint {
+    display: none;
+  }
+  .ih-wall {
+    position: static;
+    height: 60vh;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    filter: none;
+  }
+  .ih-wall__item--mobile-hidden {
+    display: none;
+  }
+  .ih-panel {
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 70vh;
+    border: 0;
+    border-top: 1px solid var(--graphite);
+    padding: 32px 24px 24px;
+    animation: ih-panel-up 280ms ease-out;
+    overflow-y: auto;
+  }
+  @keyframes ih-panel-up {
+    from { transform: translateY(100%); }
+    to   { transform: translateY(0); }
+  }
+}
+
+/* ----- Reduced motion ----- */
+@media (prefers-reduced-motion: reduce) {
+  .ih-wall {
+    transition: none;
+    filter: saturate(1) brightness(1);
+  }
+  .ih__crest {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+  .ih[data-progress-gt-half="true"] .ih__crest {
+    opacity: 0;
+  }
+  .ih-panel {
+    animation: none;
+  }
+}
