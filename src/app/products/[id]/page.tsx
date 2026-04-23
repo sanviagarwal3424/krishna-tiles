@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { products, getProductById, getRelatedProducts } from "@/data/products";
 import { business, getCallLink, getWhatsAppLink } from "@/data/business";
-import ProductCard from "@/components/ProductCard";
 import EnquiryForm from "@/components/EnquiryForm";
 import type { Metadata } from "next";
 
@@ -168,9 +167,29 @@ export default async function ProductDetailPage({ params }: PageProps) {
             <p className="section__subtitle">
               Similar tiles you might be interested in
             </p>
-            <div className="products-grid">
+            <div className="products-grid-rd products-grid-rd--after">
               {related.map((p) => (
-                <ProductCard key={p.id} product={p} />
+                <Link
+                  key={p.id}
+                  href={`/products/${p.id}`}
+                  className="tile-card"
+                  style={{ textDecoration: "none" }}
+                >
+                  <div className="tile-card__media">
+                    <Image
+                      src={p.images[0] || "/images/placeholder.jpg"}
+                      alt={p.name}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                  <div className="tile-card__meta">
+                    <h3 className="tile-card__name">{p.name}</h3>
+                    <p className="tile-card__spec">
+                      {p.size} · {p.brand}
+                    </p>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
