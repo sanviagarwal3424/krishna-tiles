@@ -1985,3 +1985,32 @@ h1, h2, h3, h4, h5, h6 {
     animation: none;
   }
 }
+
+/* ================================================================ */
+/* ===== ShowroomTeaser =========================================== */
+/* ================================================================ */
+.showroom-teaser { padding: 0; position: relative; }
+.showroom-teaser__media { position: relative; width: 100%; aspect-ratio: 16 / 7; }
+.showroom-teaser__overlay {
+  position: absolute;
+  left: 6vw;
+  bottom: 10%;
+  max-width: 520px;
+  padding: 32px 36px;
+  background: rgba(11, 11, 12, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--bone);
+}
+.showroom-teaser__overlay .rd-body { color: var(--text-dim-on-dark); margin: 8px 0 24px; }
+.showroom-teaser__ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+
+@media (max-width: 768px) {
+  .showroom-teaser__media { aspect-ratio: 4 / 5; }
+  .showroom-teaser__overlay {
+    position: static;
+    max-width: none;
+    margin: 24px;
+    padding: 24px;
+  }
+}
