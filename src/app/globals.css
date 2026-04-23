@@ -2014,3 +2014,71 @@ h1, h2, h3, h4, h5, h6 {
     padding: 24px;
   }
 }
+
+/* ================================================================ */
+/* ===== FilterBar ================================================ */
+/* ================================================================ */
+.filter-bar {
+  position: sticky;
+  top: 64px;
+  z-index: 40;
+  background: var(--ink);
+  border-top: 1px solid var(--graphite);
+  border-bottom: 1px solid var(--graphite);
+}
+.filter-bar__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+.filter-bar__chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid var(--graphite);
+  color: var(--bone);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 0;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+  flex-shrink: 0;
+}
+.filter-bar__chip:hover { border-color: var(--bone); }
+.filter-bar__chip:focus-visible { outline: 2px solid var(--accent-orange); outline-offset: 2px; }
+.filter-bar__chip--active {
+  background: var(--bone);
+  color: var(--ink);
+  border-color: var(--bone);
+}
+@media (prefers-reduced-motion: reduce) { .filter-bar__chip { transition: none; } }
+
+/* ================================================================ */
+/* ===== ShowroomPreview ========================================== */
+/* ================================================================ */
+.showroom-preview__header { margin-bottom: 40px; }
+.showroom-preview__header .rd-eyebrow { margin-bottom: 14px; }
+.showroom-preview__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--graphite);
+}
+.showroom-preview__tile {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--surface);
+}
+.showroom-preview__tile img { object-fit: cover; }
