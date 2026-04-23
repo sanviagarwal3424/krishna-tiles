@@ -83,7 +83,7 @@ Section order (alternating dark/light, `— D —` dark, `— L —` light):
 
 ### 2.2 Showroom page (`/contact`)
 
-1. **PageHero** — D — "Upper Bazar, Ranchi · Open today 10 AM – 8 PM"
+1. **PageHero** — D — "Upper Bazar, Ranchi · Mon–Sat · 10 AM – 8 PM"
 2. **VisitInfo** — D — 3-column: Address · Hours (by day) · Contact (tap-to-call, WhatsApp, email)
 3. **DirectionsMap** — L — Google Maps iframe embed + "Get Directions" button (opens Google Maps app)
 4. **ShowroomPreview** — D — 4-image grid of showroom interior (placeholder Unsplash until real photos)
@@ -118,12 +118,12 @@ After 100%, the 200vh wrapper ends, the stage unpins, and the page flow resumes 
 Mobile skips the sticky state machine entirely. The hero is a single `100vh` non-sticky section: tile grid at full saturation from the start, crest overlaid at top third with `pointer-events: none` on its background (so tile taps still register), tiles clickable immediately. Tap opens the TileDetailPanel bottom sheet. No scroll-driven state transitions.
 
 ### Crest content
-- Eyebrow: "Since 2004 · Ranchi"
-- Logo: `<img src="/images/logo.png" alt="Krishna Tiles" />` — 220px wide (mobile: 160px)
+- Eyebrow: "Since 2004 · Upper Bazar, Ranchi"
+- Logo: `<img src="/images/logo.png" alt="Krishna Tiles" />` — 220px wide (mobile: 160px). Uses plain `<img>` (not `next/image`) with eslint-disable comment — logo PNG is small and predictable, next/image adds no benefit
 - Rule: 40px horizontal line, `--accent-orange`
-- Line: "Upper Bazar, Ranchi · Since 2004"
+- Line: "Mon–Sat · 10 AM – 8 PM" (sourced from `business.timings`)
 - Primary CTA: "Visit Showroom" → `/contact`
-- Secondary CTA: "Call <phone>" → `tel:<phone>`
+- Secondary CTA: "Call {business.phoneDisplay}" → `tel:{business.phone}` (sourced from `src/data/business.ts`)
 - Scroll hint (bottom): "↓ Scroll to explore tiles" — fades out after user scrolls
 
 ### Interactive state
