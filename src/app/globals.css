@@ -1,5 +1,5 @@
 /* ===== KRISHNA TILES — Luxury Design System ===== */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500&family=Manrope:wght@300;400;600;700;800&display=swap');
 
 :root {
   /* Colors — Neutral luxury palette */
@@ -81,6 +81,23 @@
   --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-elegant: 700ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* === Redesign tokens (Confident Retail Showroom) === */
+  --ink: #0B0B0C;
+  --surface: #151517;
+  --graphite: #2A2A2C;
+  --bone: #F4F2ED;
+  --text-dim-on-dark: #9B9B9B;
+  --text-dim-on-light: #6F6F6F;
+  --accent-orange: #E8742B;
+  --accent-plum: #7B4680;
+  --accent-moss: #A8C93D;
+  --accent-signal: #0492C5;
+  --fs-hero: clamp(3rem, 8vw, 5.5rem);
+  --fs-display: clamp(2rem, 4vw, 3.5rem);
+  --fs-h3: clamp(1.25rem, 2vw, 1.75rem);
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-ui: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 /* ===== Reset ===== */
@@ -1580,4 +1597,88 @@ h1, h2, h3, h4, h5, h6 {
   .section__title {
     font-size: var(--fs-3xl);
   }
+}
+
+/* ================================================================ */
+/* ===== REDESIGN — Shared Primitives (Confident Retail Showroom) == */
+/* ================================================================ */
+
+.rd-eyebrow {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent-orange);
+  display: inline-block;
+}
+.rd-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--fs-display);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.rd-h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--fs-h3);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+.rd-body {
+  font-family: var(--font-ui);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.rd-small {
+  font-family: var(--font-ui);
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.rd-section { padding: clamp(64px, 10vw, 120px) 24px; }
+.rd-section--dark  { background: var(--ink);  color: var(--bone); }
+.rd-section--light { background: var(--bone); color: var(--ink); }
+.rd-container { max-width: 1280px; margin: 0 auto; }
+
+.rd-rule { width: 40px; height: 1px; background: var(--accent-orange); border: 0; margin: 16px 0; }
+
+/* CTA buttons — Bone & Ink (no border-radius) */
+.rd-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 0;
+  transition: background 220ms ease, color 220ms ease, border-color 220ms ease;
+  text-decoration: none;
+  line-height: 1;
+}
+.rd-btn--primary-on-dark  { background: var(--bone); color: var(--ink); }
+.rd-btn--primary-on-dark:hover,
+.rd-btn--primary-on-dark:focus-visible  { background: var(--accent-orange); color: var(--ink); }
+.rd-btn--secondary-on-dark { background: transparent; color: var(--bone); border-color: var(--bone); }
+.rd-btn--secondary-on-dark:hover,
+.rd-btn--secondary-on-dark:focus-visible { background: var(--bone); color: var(--ink); }
+.rd-btn--primary-on-light { background: var(--ink); color: var(--bone); }
+.rd-btn--primary-on-light:hover,
+.rd-btn--primary-on-light:focus-visible { background: var(--accent-orange); color: var(--ink); }
+.rd-btn--secondary-on-light { background: transparent; color: var(--ink); border-color: var(--ink); }
+.rd-btn--secondary-on-light:hover,
+.rd-btn--secondary-on-light:focus-visible { background: var(--ink); color: var(--bone); }
+
+.rd-btn:focus-visible { outline: 2px solid var(--accent-orange); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rd-btn, .rd-btn * { transition: none !important; }
 }
