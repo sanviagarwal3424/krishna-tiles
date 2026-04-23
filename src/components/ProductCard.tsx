@@ -1,56 +1,42 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Product } from "@/data/products";
-import { getWhatsAppLink } from "@/data/business";
+import type { Tile } from "@/data/tiles";
 
-interface ProductCardProps {
-  product: Product;
-}
+type ProductCardProps = {
+  tile: Tile;
+  priority?: boolean;
+};
 
-export default function ProductCard({ product }: ProductCardProps) {
-  const whatsappMsg = `Hi, I'm interested in the "${product.name}" (${product.size}, ${product.finish}). Can you share more details and pricing?`;
-
+export default function ProductCard({ tile, priority }: ProductCardProps) {
   return (
-    <div className="product-card" id={`product-card-${product.id}`}>
-      <Link href={`/products/${product.id}`} className="product-card__image-wrap">
-        <div className="product-card__badges">
-          {product.isNew && <span className="badge badge--new">New</span>}
-          {product.isFeatured && <span className="badge badge--featured">Featured</span>}
+    <Link
+      href={`/contact?tile=${encodeURIComponent(tile.id)}`}
+      className="tile-card"
+      aria-label={`${tile.name} — see in showroom`}
+    >
+      <article>
+        <div className="tile-card__media">
+          <Image
+            src={tile.image}
+            alt={`${tile.name} — ${tile.material}`}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+            className="tile-card__image"
+            priority={priority}
+          />
+          <div className="tile-card__overlay">
+            <span className="rd-btn rd-btn--primary-on-dark tile-card__cta">
+              See in Showroom
+            </span>
+          </div>
         </div>
-        <Image
-          src={product.images[0] || "/images/placeholder.jpg"}
-          alt={product.name}
-          fill
-          sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="product-card__image"
-          style={{ objectFit: "cover" }}
-        />
-      </Link>
-      <div className="product-card__body">
-        <span className="product-card__brand">{product.brand}</span>
-        <Link href={`/products/${product.id}`}>
-          <h3 className="product-card__name">{product.name}</h3>
-        </Link>
-        <div className="product-card__specs">
-          <span className="product-card__spec">{product.size}</span>
-          <span className="product-card__spec">{product.finish}</span>
-          <span className="product-card__spec">{product.material}</span>
+        <div className="tile-card__meta">
+          <h3 className="tile-card__name">{tile.name}</h3>
+          <p className="tile-card__spec">
+            {tile.size} · {tile.material}
+          </p>
         </div>
-        <div className="product-card__price">{product.priceRange}</div>
-        <div className="product-card__actions">
-          <a
-            href={getWhatsAppLink(whatsappMsg)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn--whatsapp"
-          >
-            💬 Enquire
-          </a>
-          <Link href={`/products/${product.id}`} className="btn btn--outline">
-            View Details
-          </Link>
-        </div>
-      </div>
-    </div>
+      </article>
+    </Link>
   );
 }

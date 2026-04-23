@@ -2082,3 +2082,72 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--surface);
 }
 .showroom-preview__tile img { object-fit: cover; }
+
+/* ================================================================ */
+/* ===== CTAStrip (redesign) ====================================== */
+/* ================================================================ */
+.cta-strip__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.cta-strip__text { max-width: 640px; }
+.cta-strip__text .rd-eyebrow { margin-bottom: 12px; }
+.cta-strip__ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+@media (max-width: 768px) {
+  .cta-strip__inner { flex-direction: column; align-items: flex-start; }
+  .cta-strip__text .rd-display { font-size: clamp(1.5rem, 6vw, 2.25rem); }
+}
+
+/* ================================================================ */
+/* ===== TileCard (ProductCard redesign) ========================== */
+/* ================================================================ */
+.tile-card {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--bone);
+}
+.tile-card__media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--surface);
+}
+.tile-card__media img {
+  object-fit: cover;
+  transition: transform 300ms ease-out;
+}
+.tile-card__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 24px;
+  background: linear-gradient(to top, rgba(11,11,12,0.8) 0%, rgba(11,11,12,0) 60%);
+  opacity: 0;
+  transition: opacity 260ms ease-out;
+}
+.tile-card__cta {
+  transform: translateY(12px);
+  transition: transform 260ms ease-out;
+}
+.tile-card:hover .tile-card__media img,
+.tile-card:focus-within .tile-card__media img { transform: scale(1.03); }
+.tile-card:hover .tile-card__overlay,
+.tile-card:focus-within .tile-card__overlay { opacity: 1; }
+.tile-card:hover .tile-card__cta,
+.tile-card:focus-within .tile-card__cta { transform: translateY(0); }
+.tile-card__meta { padding: 16px 4px 0; }
+.tile-card__name { font-family: var(--font-display); font-size: var(--fs-h3); font-weight: 400; letter-spacing: -0.015em; color: var(--ink); margin: 0 0 4px; }
+.tile-card__spec { font-family: var(--font-ui); font-weight: 400; font-size: 13px; color: var(--text-dim-on-light); }
+.tile-card:focus-visible { outline: 2px solid var(--accent-orange); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  .tile-card__media img, .tile-card__overlay, .tile-card__cta { transition: none !important; transform: none !important; }
+}
