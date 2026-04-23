@@ -1,11 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
-import { business, getCallLink } from "@/data/business";
+import { business } from "@/data/business";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -18,128 +15,79 @@ const navLinks = [
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const pathname = usePathname();
-
-  useEffect(() => {
-    let ticking = false;
-    const onScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          setScrolled(window.scrollY > 8);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname.startsWith(href);
+  const waHref = `https://wa.me/${business.whatsapp}`;
 
   return (
     <>
-      <motion.header
-        className={`header ${scrolled ? "header--scrolled" : ""}`}
-        id="header"
-        initial={{ opacity: 0, y: -8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-      >
-        <div className="header__inner">
-          <motion.div whileHover={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
-            <Link href="/" className="header__logo" aria-label="Krishna Tiles home">
-              <Image
-                src="/images/logo.png"
-                alt="Krishna Tiles"
-                width={200}
-                height={120}
-                className="header__logo-img"
-                priority
-              />
-            </Link>
-          </motion.div>
+      <header className="header-redesigned" id="header">
+        <div className="header-redesigned__inner">
+          <Link href="/" aria-label="Krishna Tiles home">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/logo.png" alt="Krishna Tiles" width={120} />
+          </Link>
 
-          <nav className="header__nav" aria-label="Primary">
+          <nav className="header-redesigned__nav" aria-label="Primary">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`header__link ${isActive(link.href) ? "header__link--active" : ""}`}
-              >
+              <Link key={link.href} href={link.href} className="header-redesigned__link">
                 {link.label}
               </Link>
             ))}
           </nav>
 
-          <div className="header__cta">
-            <a
-              href={getCallLink()}
-              className="header__cta-link"
-              aria-label={`Call ${business.phoneDisplay}`}
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11 21 3 13 3 5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
-              </svg>
-              <span>{business.phoneDisplay}</span>
-            </a>
-          </div>
+          <a
+            href={waHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="header-redesigned__wa"
+            aria-label="Chat on WhatsApp"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.52 3.48A11.79 11.79 0 0012.06 0C5.5 0 .17 5.33.17 11.89c0 2.1.55 4.14 1.6 5.95L0 24l6.3-1.65a11.89 11.89 0 005.76 1.47h.01c6.55 0 11.89-5.33 11.89-11.89 0-3.17-1.24-6.16-3.44-8.45zM12.07 21.8h-.01a9.87 9.87 0 01-5.04-1.38l-.36-.22-3.74.98 1-3.65-.24-.37a9.85 9.85 0 01-1.52-5.27c0-5.45 4.44-9.88 9.9-9.88 2.65 0 5.13 1.03 7 2.9a9.82 9.82 0 012.9 6.99c0 5.45-4.44 9.88-9.89 9.88z" />
+            </svg>
+            WhatsApp
+          </a>
 
           <button
-            className={`header__menu-btn ${mobileOpen ? "header__menu-btn--open" : ""}`}
-            onClick={() => setMobileOpen(!mobileOpen)}
+            className="header-redesigned__burger"
+            onClick={() => setMobileOpen((v) => !v)}
             aria-label="Toggle menu"
             aria-expanded={mobileOpen}
           >
-            <span />
-            <span />
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+              {mobileOpen ? (
+                <path d="M6 6l12 12M6 18L18 6" />
+              ) : (
+                <path d="M4 7h16M4 12h16M4 17h16" />
+              )}
+            </svg>
           </button>
         </div>
-      </motion.header>
+      </header>
 
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            className="mobile-nav"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
+      {mobileOpen && (
+        <div className="header-redesigned__mobile-menu" role="dialog" aria-modal="true">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="header-redesigned__link"
+              onClick={() => setMobileOpen(false)}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <a
+            href={waHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="header-redesigned__wa"
+            onClick={() => setMobileOpen(false)}
+            style={{ display: "inline-flex", alignSelf: "flex-start" }}
           >
-            {navLinks.map((link, i) => (
-              <motion.div
-                key={link.href}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.04 * i, duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <Link
-                  href={link.href}
-                  className="mobile-nav__link"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              </motion.div>
-            ))}
-            <div className="mobile-nav__cta">
-              <a href={getCallLink()} className="btn btn--primary btn--lg">
-                Call Now — {business.phoneDisplay}
-              </a>
-              <a
-                href={`https://wa.me/${business.whatsapp}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn--whatsapp btn--lg"
-              >
-                WhatsApp Us
-              </a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            WhatsApp
+          </a>
+        </div>
+      )}
     </>
   );
 }
