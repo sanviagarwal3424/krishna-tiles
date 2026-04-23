@@ -20,8 +20,8 @@
 --surface: #151517;       /* dark cards, elevated surfaces */
 --graphite: #2A2A2C;      /* borders, dividers */
 --bone: #F4F2ED;          /* warm off-white — light sections + text on dark */
---ink-muted: #9B9B9B;     /* secondary text on dark */
---bone-muted: #6F6F6F;    /* secondary text on light */
+--text-dim-on-dark:  #9B9B9B;  /* secondary text when background is dark */
+--text-dim-on-light: #6F6F6F;  /* secondary text when background is light */
 
 /* Brand accents — used sparingly, one per section */
 --accent-orange: #E8742B; /* primary accent, eyebrows, hover states */
@@ -71,9 +71,9 @@
 Section order (alternating dark/light, `— D —` dark, `— L —` light):
 
 1. **InteractiveHero** — D — full-viewport tile gallery (see §3)
-2. **StatsBar** — D — 22+ yrs · 40+ brands · 20,000+ designs · 4.8★ (existing, restyle only)
+2. **StatsBar** — D — thin horizontal strip (~80px tall, not a full section): 22+ yrs · 40+ brands · 20,000+ designs · 4.8★. Reads as a band attached to the hero, not as a second dark section — alternating pattern continues with #3
 3. **Shop by Space** — L — 4 category cards (Living / Bath / Kitchen / Outdoor) with full-bleed photos, each links to `/products?category=<slug>`
-4. **Featured Collection** — D — 6 curated tiles in showcase-tease cards (no prices)
+4. **Featured Collection** — D — 6 tiles where `featured: true` in `tiles.ts`, rendered in showcase-tease cards (no prices). These are curated separately from the `/products` ordering
 5. **Showroom Teaser** — L — single full-bleed horizontal showroom image, "Step inside — 4,200 sq ft" headline, CTA → `/contact`
 6. **Real Installations** — D — 4-image gallery (existing image set, restyled)
 7. **Brands We Carry** — L — logo strip (not text chips), scrollable on mobile
@@ -87,23 +87,24 @@ Section order (alternating dark/light, `— D —` dark, `— L —` light):
 2. **VisitInfo** — D — 3-column: Address · Hours (by day) · Contact (tap-to-call, WhatsApp, email)
 3. **DirectionsMap** — L — Google Maps iframe embed + "Get Directions" button (opens Google Maps app)
 4. **ShowroomPreview** — D — 4-image grid of showroom interior (placeholder Unsplash until real photos)
-5. **EnquiryForm** — L — Name · Phone · Room Interest (dropdown) · Message · Submit
+5. **EnquiryForm** — L — Name · Phone · Room Interest (dropdown: Living Room / Bathroom / Kitchen / Outdoor / Sanitaryware / Multiple Rooms / Other) · Message · Submit
 6. **CTAStrip** — D — "Call now — we're open" + phone + WhatsApp
 
 ### 2.3 Products (`/products`)
 
 1. **PageHero** — D — "The Collection" with thin banner
 2. **FilterBar** — D — sticky horizontal chip filter (All / Living / Bath / Kitchen / Outdoor / Sanitaryware), URL-synced via `?category=<slug>`
-3. **TileGrid** — L — 3-col desktop, 2-col tablet, 1-col mobile · ProductCard in showcase-tease mode
-4. **MidPageCTA** — D — inserted after 6 tiles: "Can't decide? Walk in — we'll help you pick." with WhatsApp + Call CTAs
-5. **RemainingGrid** — L — rest of tiles
-6. **CTAStrip** — D — "See every tile in our showroom"
+3. **TileGrid** — L — 3-col desktop, 2-col tablet, 1-col mobile · ProductCard in showcase-tease mode. Single grid component, but the page layout inserts a **MidPageCTA** row after the 6th card: a dark full-width band containing "Can't decide? Walk in — we'll help you pick." + WhatsApp + Call CTAs. The grid resumes (still light) below it
+4. **CTAStrip** — D — "See every tile in our showroom"
 
 ---
 
 ## 3. Interactive Hero (core interaction)
 
-Three states driven by scroll progress against a 100vh sticky container:
+### Desktop structure
+The hero is a `200vh` tall outer wrapper containing a `position: sticky; top: 0; height: 100vh` inner stage. As the user scrolls the 200vh wrapper, the inner stage stays pinned and its internal state advances based on `scrollProgress = scrollY / (wrapperHeight - 100vh)` (clamped 0–1). When the wrapper ends, the stage unpins and the page flows into the next section.
+
+Three states driven by that scroll progress:
 
 | Scroll progress | State | Tile filter | Crest | Spotlight |
 |---|---|---|---|---|
@@ -111,7 +112,10 @@ Three states driven by scroll progress against a 100vh sticky container:
 | 30% → 70% | Transitioning | animating to `saturate(0.85) brightness(0.8)` | fading (opacity 1 → 0.15, translateY 0 → -30px, scale 1 → 0.9) | fading to 0 |
 | 70% → 100% | Interactive | `saturate(1) brightness(1)` | opacity 0, pointer-events none | removed |
 
-After 100%, the page flow resumes with the next section.
+After 100%, the 200vh wrapper ends, the stage unpins, and the page flow resumes with the next section.
+
+### Mobile structure
+Mobile skips the sticky state machine entirely. The hero is a single `100vh` non-sticky section: tile grid at full saturation from the start, crest overlaid at top third with `pointer-events: none` on its background (so tile taps still register), tiles clickable immediately. Tap opens the TileDetailPanel bottom sheet. No scroll-driven state transitions.
 
 ### Crest content
 - Eyebrow: "Since 2004 · Ranchi"
@@ -232,6 +236,7 @@ Context-aware messages prefilled:
 - React Server Components by default; `"use client"` only where interaction requires it (InteractiveHero, FilterBar, TileDetailPanel, EnquiryForm)
 - Styling: `globals.css` with BEM-style naming following existing convention
 - `next/image` for all raster assets
+- SEO: each page defines `export const metadata: Metadata = { title, description }` (App Router convention); `h1` is enforced per page; semantic landmarks (`<main>`, `<section>`, `<nav>`) preserved
 - Deployment halted until redesign complete (user directive)
 
 ### 6.2 Build sequence (suggested)
