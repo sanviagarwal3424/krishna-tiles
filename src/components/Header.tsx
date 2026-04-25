@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { business } from "@/data/business";
 
 const navLinks = [
@@ -21,9 +22,15 @@ export default function Header() {
     <>
       <header className="header-redesigned" id="header">
         <div className="header-redesigned__inner">
-          <Link href="/" aria-label="Krishna Tiles home">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/logo.png" alt="Krishna Tiles" width={120} />
+          <Link href="/" aria-label="Krishna Tiles home" className="header-redesigned__logo">
+            <Image
+              src="/images/logo.png"
+              alt="Krishna Tiles"
+              width={120}
+              height={40}
+              priority
+              sizes="120px"
+            />
           </Link>
 
           <nav className="header-redesigned__nav" aria-label="Primary">

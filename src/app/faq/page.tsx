@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import CTAStrip from "@/components/CTAStrip";
+import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "FAQ — Krishna Tiles Ranchi | Common Questions Answered",
   description:
-    "Answers to common questions about tiles, sanitaryware, pricing, installation, and our showroom in Ranchi.",
+    "Tile sizes, brands, delivery in Ranchi, installation, EMI, returns — clear answers from Krishna Tiles showroom at Upper Bazar, Ranchi.",
+  alternates: { canonical: "/faq" },
 };
 
 const faqs = [
@@ -66,10 +68,7 @@ const faqSchema = {
 export default function FAQPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={faqSchema} />
 
       <section className="section section--alt" style={{ paddingTop: "4rem" }}>
         <div className="container" style={{ textAlign: "center" }}>

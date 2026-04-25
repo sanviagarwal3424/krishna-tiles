@@ -15,8 +15,14 @@ export default function FilterBar({ categories, activeSlug }: FilterBarProps) {
   const current = activeSlug ?? searchParams.get('category') ?? 'all';
 
   const handleClick = (slug: string) => {
-    const href = slug === 'all' ? '/products' : `/products?category=${slug}`;
-    router.replace(href, { scroll: false });
+    const params = new URLSearchParams(searchParams.toString());
+    if (slug === 'all') {
+      params.delete('category');
+    } else {
+      params.set('category', slug);
+    }
+    const qs = params.toString();
+    router.replace(qs ? `/products?${qs}` : '/products', { scroll: false });
   };
 
   return (

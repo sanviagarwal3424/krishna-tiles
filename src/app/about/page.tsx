@@ -5,9 +5,10 @@ import CTAStrip from "@/components/CTAStrip";
 import TrustSection from "@/components/TrustSection";
 
 export const metadata: Metadata = {
-  title: "About Us — Krishna Tiles | Trusted Tile Shop in Ranchi",
+  title: "About Krishna Tiles — Ranchi's Premium Tile Authority Since 2004",
   description:
-    "20+ years of serving Ranchi with premium tiles & sanitaryware. Learn about Krishna Tiles — our story, our team, and our commitment to quality.",
+    "20+ years serving Ranchi and Jharkhand. Authorised for 50+ premium brands, 5,000+ designs on display, trusted by homeowners, architects and builders.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

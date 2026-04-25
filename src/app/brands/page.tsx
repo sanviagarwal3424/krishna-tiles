@@ -4,9 +4,10 @@ import { brands } from "@/data/brands";
 import CTAStrip from "@/components/CTAStrip";
 
 export const metadata: Metadata = {
-  title: "Top Tile Brands — Krishna Tiles Ranchi | Kajaria, Somany, Jaquar & More",
+  title: "Authorised Brand Partners — Kajaria, Somany, Jaquar & More | Krishna Tiles Ranchi",
   description:
-    "We are authorised dealers for India's top tile and sanitaryware brands — Kajaria, Somany, Orient Bell, Jaquar, Cera, RAK Ceramics and more. Visit our showroom in Ranchi.",
+    "Authorised dealer for 50+ premium brands — Kajaria, Somany, Orient Bell, Jaquar, Cera, RAK Ceramics, Johnson Tiles, Nitco. Genuine, warranty-backed. Upper Bazar, Ranchi.",
+  alternates: { canonical: "/brands" },
 };
 
 export default function BrandsPage() {

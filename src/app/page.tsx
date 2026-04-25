@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { business } from "@/data/business";
@@ -9,6 +10,44 @@ import ProductCard from "@/components/ProductCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import TrustSection from "@/components/TrustSection";
 import CTAStrip from "@/components/CTAStrip";
+import JsonLd from "@/components/JsonLd";
+
+export const metadata: Metadata = {
+  title:
+    "Krishna Tiles — Premium Tile & Sanitaryware Showroom in Ranchi (Since 2004)",
+  description:
+    "Ranchi's premium destination for tiles, sanitaryware & bath fittings. 5,000+ designs across 50+ brands — Kajaria, Somany, Jaquar, Cera. Visit our Upper Bazar showroom.",
+  alternates: { canonical: "/" },
+};
+
+const homeFaqs = [
+  {
+    q: "Where is Krishna Tiles located?",
+    a: "Lalji Hirji Road, Upper Bazar, Ranchi, Jharkhand 834001. Open Monday–Saturday, 10 AM to 8 PM.",
+  },
+  {
+    q: "Which brands do you carry?",
+    a: "Authorised dealer for Kajaria, Somany, Orient Bell, Jaquar, Cera, RAK Ceramics, Johnson Tiles and Nitco — 50+ brands across tiles, sanitaryware and bath fittings.",
+  },
+  {
+    q: "Do you deliver across Ranchi and Jharkhand?",
+    a: "Yes — same-day delivery within Ranchi and scheduled delivery across Jharkhand for bulk and project orders.",
+  },
+  {
+    q: "Can architects and builders get project pricing?",
+    a: "Yes. We work closely with architects and builders on residential, commercial and hospitality projects. WhatsApp or call us for a dedicated project consultation.",
+  },
+];
+
+const homeFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: homeFaqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
 
 const spaceCards = [
   { slug: "living",  name: "Living Rooms", image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop" },
@@ -29,6 +68,7 @@ export default function HomePage() {
 
   return (
     <>
+      <JsonLd data={homeFaqSchema} />
       <HeroSection />
 
       <section className="home-statsbar" aria-label="Krishna Tiles stats">
@@ -123,6 +163,27 @@ export default function HomePage() {
       </section>
 
       <TrustSection />
+
+      <section className="rd-section rd-section--light home-faq">
+        <header className="home-faq__header">
+          <p className="rd-eyebrow">Good to Know</p>
+          <h2 className="rd-display">Frequently asked</h2>
+        </header>
+        <div className="home-faq__list">
+          {homeFaqs.map((f) => (
+            <details key={f.q} className="home-faq__item">
+              <summary className="home-faq__q">
+                <span>{f.q}</span>
+                <span className="home-faq__mark" aria-hidden="true">＋</span>
+              </summary>
+              <p className="home-faq__a">{f.a}</p>
+            </details>
+          ))}
+        </div>
+        <p className="home-faq__more">
+          More answers on our <Link href="/faq">FAQ page</Link>.
+        </p>
+      </section>
 
       <CTAStrip variant="home" />
     </>

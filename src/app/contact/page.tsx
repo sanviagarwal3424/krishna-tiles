@@ -5,8 +5,9 @@ import EnquiryForm from "@/components/EnquiryForm";
 import CTAStrip from "@/components/CTAStrip";
 
 export const metadata: Metadata = {
-  title: "Visit Our Showroom — Krishna Tiles | Upper Bazar, Ranchi",
-  description: `Visit Krishna Tiles at ${business.address.full}. Open Mon–Sat, 10 AM – 8 PM. Call ${business.phoneDisplay} or WhatsApp us for tile enquiries.`,
+  title: "Visit the Showroom — Krishna Tiles | Upper Bazar, Ranchi",
+  description: `See 5,000+ tile designs at ${business.address.full}. Open Mon–Sat, 10 AM – 8 PM. Call ${business.phoneDisplay} or WhatsApp for free expert guidance.`,
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

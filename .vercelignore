@@ -1,0 +1,13 @@
+.next
+node_modules
+.vexp
+.superpowers
+.claude
+.playwright-mcp
+docs
+start
+*.png
+*.jpg
+*.jpeg
+.DS_Store
+.git

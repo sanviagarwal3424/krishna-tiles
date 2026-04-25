@@ -3,9 +3,10 @@ import Image from "next/image";
 import CTAStrip from "@/components/CTAStrip";
 
 export const metadata: Metadata = {
-  title: "Gallery & Inspiration — Krishna Tiles Ranchi",
+  title: "Installation Gallery — Real Ranchi Homes | Krishna Tiles",
   description:
-    "Get inspired by real tile installations. Browse bathroom, kitchen, and living room designs using tiles from Krishna Tiles, Ranchi.",
+    "Real tile installations in Ranchi homes — bathrooms, kitchens, living rooms, outdoor terraces. Find inspiration from work we've done for customers across Jharkhand.",
+  alternates: { canonical: "/gallery" },
 };
 
 const galleryItems = [
