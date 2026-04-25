@@ -6,8 +6,8 @@ node_modules
 .playwright-mcp
 docs
 start
-*.png
-*.jpg
-*.jpeg
+/*.png
+/*.jpg
+/*.jpeg
 .DS_Store
 .git
