@@ -16,7 +16,7 @@ export default function ContactPage() {
       <section className="rd-section rd-section--dark contact-hero">
         <div className="rd-container">
           <p className="rd-eyebrow">The Showroom</p>
-          <h1 className="rd-display" style={{ color: "var(--bone)", marginTop: 12 }}>
+          <h1 className="rd-display" style={{ color: "#ffffff", marginTop: 12 }}>
             Upper Bazar, Ranchi
           </h1>
           <p className="rd-body contact-hero__line">
@@ -48,12 +48,12 @@ export default function ContactPage() {
           <div className="contact-visit__col">
             <p className="rd-eyebrow">Hours</p>
             <p className="rd-body contact-visit__body">
-              <strong style={{ color: "var(--bone)" }}>Monday – Saturday</strong>
+              <strong style={{ color: "#ffffff" }}>Monday – Saturday</strong>
               <br />
               10:00 AM – 8:00 PM
               <br />
               <br />
-              <strong style={{ color: "var(--bone)" }}>Sunday</strong>
+              <strong style={{ color: "#ffffff" }}>Sunday</strong>
               <br />
               Closed
             </p>

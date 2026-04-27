@@ -195,7 +195,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
           <div className="rd-container">
             <header style={{ marginBottom: 32 }}>
               <p className="rd-eyebrow">More in {categoryLabel}</p>
-              <h2 className="rd-display" style={{ color: "var(--bone)", marginTop: 8 }}>
+              <h2 className="rd-display" style={{ color: "#ffffff", marginTop: 8 }}>
                 You may also like
               </h2>
             </header>

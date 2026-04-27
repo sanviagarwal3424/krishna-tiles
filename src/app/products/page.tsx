@@ -117,7 +117,7 @@ export default async function ProductsPage({ searchParams }: PageProps) {
       <section className="rd-section rd-section--dark products-hero">
         <div className="rd-container">
           <p className="rd-eyebrow">The Collection</p>
-          <h1 className="rd-display" style={{ color: "var(--bone)", marginTop: 12 }}>
+          <h1 className="rd-display" style={{ color: "#ffffff", marginTop: 12 }}>
             Every tile we carry
           </h1>
           <p className="rd-body products-hero__line">
@@ -173,7 +173,7 @@ export default async function ProductsPage({ searchParams }: PageProps) {
                   <div className="products-midcta__inner">
                     <div>
                       <p className="rd-eyebrow">Help deciding?</p>
-                      <h3 className="rd-h3" style={{ color: "var(--bone)", marginTop: 8 }}>
+                      <h3 className="rd-h3" style={{ color: "#ffffff", marginTop: 8 }}>
                         Can&apos;t decide? Walk in — we&apos;ll help you pick.
                       </h3>
                     </div>
