@@ -24,12 +24,12 @@ export default function Header() {
         <div className="header-redesigned__inner">
           <Link href="/" aria-label="Krishna Tiles home" className="header-redesigned__logo">
             <Image
-              src="/images/logo.png"
+              src="/images/logo-transparent.png"
               alt="Krishna Tiles"
-              width={120}
-              height={40}
+              width={96}
+              height={32}
               priority
-              sizes="120px"
+              sizes="96px"
             />
           </Link>
 
