@@ -111,7 +111,7 @@ export default function HeroSection() {
           </ul>
 
           <Image
-            src="/images/logo.png"
+            src="/images/logo-transparent.png"
             alt="Krishna Tiles"
             className="hero-wall__logo"
             width={480}
