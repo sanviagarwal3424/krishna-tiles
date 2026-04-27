@@ -2420,6 +2420,19 @@ h1, h2, h3, h4, h5, h6 {
 .contact-map__frame iframe { width: 100%; height: 100%; border: 0; }
 .contact-map__cta { text-align: center; margin-top: 32px; }
 
+.contact-neighborhood__frame {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 640px;
+  border: 1px solid var(--graphite);
+  overflow: hidden;
+  background: var(--bone);
+}
+.contact-neighborhood__frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+@media (max-width: 768px) {
+  .contact-neighborhood__frame { height: 520px; }
+}
+
 .contact-form__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

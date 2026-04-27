@@ -111,6 +111,22 @@ export default function ContactPage() {
         </div>
       </section>
 
+      <section className="rd-section rd-section--light contact-neighborhood" aria-label="Neighborhood map">
+        <div className="rd-container">
+          <header className="contact-map__header">
+            <p className="rd-eyebrow">Explore the Neighborhood</p>
+            <h2 className="rd-display">What&apos;s around our showroom</h2>
+          </header>
+          <div className="contact-neighborhood__frame">
+            <iframe
+              src="https://storage.googleapis.com/maps-solutions-na26scjiej/neighborhood-discovery/klt7/neighborhood-discovery.html"
+              loading="lazy"
+              title="Neighborhood around Krishna Tiles showroom — Upper Bazar, Ranchi"
+            />
+          </div>
+        </div>
+      </section>
+
       <ShowroomPreview />
 
       <section className="rd-section rd-section--light contact-form">
