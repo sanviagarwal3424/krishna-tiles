@@ -10,6 +10,7 @@ import TestimonialCard from "@/components/TestimonialCard";
 import TrustSection from "@/components/TrustSection";
 import CTAStrip from "@/components/CTAStrip";
 import JsonLd from "@/components/JsonLd";
+import Transformations from "@/components/Transformations";
 
 export const metadata: Metadata = {
   title:
@@ -53,13 +54,6 @@ const spaceCards = [
   { slug: "bath",    name: "Bathrooms",    image: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=1200&auto=format&fit=crop" },
   { slug: "kitchen", name: "Kitchens",     image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1200&auto=format&fit=crop" },
   { slug: "outdoor", name: "Outdoors",     image: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=1200&auto=format&fit=crop" },
-];
-
-const installationImages = [
-  { src: "/images/categories/floor.jpg",    alt: "Living room with premium floor tiles",  caption: "Living Room — Marble Look" },
-  { src: "/images/categories/bathroom.jpg", alt: "Designer bathroom tiles installed",     caption: "Bathroom — Stone & Hex" },
-  { src: "/images/categories/wall.jpg",     alt: "Decorative wall tiles",                  caption: "Accent Wall — Moroccan" },
-  { src: "/images/categories/kitchen.jpg",  alt: "Kitchen with subway tile backsplash",    caption: "Kitchen — Subway" },
 ];
 
 export default function HomePage() {
@@ -120,20 +114,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="rd-section rd-section--dark home-installs">
-        <header className="home-installs__header">
-          <p className="rd-eyebrow">Real Homes</p>
-          <h2 className="rd-display">Installations across Ranchi</h2>
-        </header>
-        <div className="home-installs__grid">
-          {installationImages.map((img) => (
-            <figure key={img.src} className="home-installs__item">
-              <Image src={img.src} alt={img.alt} fill sizes="(max-width: 768px) 100vw, 50vw" />
-              <figcaption className="home-installs__caption">{img.caption}</figcaption>
-            </figure>
-          ))}
-        </div>
-      </section>
+      <Transformations />
 
       <section className="rd-section rd-section--light home-brands">
         <header className="home-brands__header">
