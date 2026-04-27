@@ -27,15 +27,30 @@ export default function ShowroomPreview() {
           <p className="rd-eyebrow">Inside the Showroom</p>
           <h2 className="rd-display">4,200 sq ft of every tile on display</h2>
         </div>
-        <div className="showroom-preview__walkover">
-          <iframe
-            src="https://www.google.com/maps?pano=CIHM0ogKEICAgIC3ktqbjQE&layer=c&output=svembed"
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="360° walkover inside Krishna Tiles showroom"
+        <a
+          href="https://maps.app.goo.gl/axXbhQdx2rAQ2Xh68"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="showroom-preview__walkover"
+          aria-label="Launch 360° walkover of the Krishna Tiles showroom in Google Maps"
+        >
+          <Image
+            src="https://lh3.googleusercontent.com/gpms-cs-s/ABJJf50MXUMAb9RgbPxDT8zWE90PbtMgzRSj-sAcbwBOTOV9ZzKZSnC5XSmLYvjaCmP1OL5KiFypUglmR0BNljk6D94usEp6A1SaHlJiU7yo0eGCDCYDPS1gpSMjcG_8Vup0gvX0jJQMMQ=w1600-h900-k-no"
+            alt="Inside the Krishna Tiles showroom — 360° preview"
+            fill
+            sizes="(max-width: 768px) 100vw, 1200px"
+            priority={false}
           />
-        </div>
+          <div className="showroom-preview__walkover-overlay">
+            <span className="showroom-preview__walkover-badge">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <path d="M5 3l14 9-14 9V3z" fill="currentColor" />
+              </svg>
+              Launch 360° Walkover
+            </span>
+            <span className="showroom-preview__walkover-sub">Step inside before you visit</span>
+          </div>
+        </a>
         <div className="showroom-preview__grid">
           {tiles.map((t) => (
             <div key={t.src} className="showroom-preview__tile">
