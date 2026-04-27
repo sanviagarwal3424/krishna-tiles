@@ -5,7 +5,6 @@ import { business } from "@/data/business";
 import { testimonials } from "@/data/testimonials";
 import { featuredTiles } from "@/data/tiles";
 import HeroSection from "@/components/HeroSection";
-import ShowroomTeaser from "@/components/ShowroomTeaser";
 import ProductCard from "@/components/ProductCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import TrustSection from "@/components/TrustSection";
@@ -120,8 +119,6 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-
-      <ShowroomTeaser />
 
       <section className="rd-section rd-section--dark home-installs">
         <header className="home-installs__header">

@@ -25,7 +25,7 @@ export default function ShowroomPreview() {
       <div className="rd-container">
         <div className="showroom-preview__header">
           <p className="rd-eyebrow">Inside the Showroom</p>
-          <h2 className="rd-display">4,200 sq ft of every tile on display</h2>
+          <h2 className="rd-display">One of Jharkhand&apos;s largest tile showrooms</h2>
         </div>
         <a
           href="https://maps.app.goo.gl/axXbhQdx2rAQ2Xh68"
