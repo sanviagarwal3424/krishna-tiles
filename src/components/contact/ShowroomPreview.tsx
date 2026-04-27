@@ -27,6 +27,15 @@ export default function ShowroomPreview() {
           <p className="rd-eyebrow">Inside the Showroom</p>
           <h2 className="rd-display">4,200 sq ft of every tile on display</h2>
         </div>
+        <div className="showroom-preview__walkover">
+          <iframe
+            src="https://www.google.com/maps?pano=CIHM0ogKEICAgIC3ktqbjQE&layer=c&output=svembed"
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="360° walkover inside Krishna Tiles showroom"
+          />
+        </div>
         <div className="showroom-preview__grid">
           {tiles.map((t) => (
             <div key={t.src} className="showroom-preview__tile">

@@ -2009,6 +2009,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 .showroom-preview__tile img { object-fit: cover; }
 
+.showroom-preview__walkover {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 2px;
+  border: 1px solid var(--graphite);
+  overflow: hidden;
+  background: #000;
+}
+.showroom-preview__walkover iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+@media (max-width: 768px) {
+  .showroom-preview__walkover { aspect-ratio: 4 / 3; }
+}
+
 /* ================================================================ */
 /* ===== CTAStrip (redesign) ====================================== */
 /* ================================================================ */
