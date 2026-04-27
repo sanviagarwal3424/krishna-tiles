@@ -7,19 +7,19 @@ type Item = { src: string; caption: string };
 const items: Item[] = [
   {
     src: "/videos/transformations/luxury-bathroom-transformation.mp4",
-    caption: "Luxury bathroom — full transformation",
+    caption: "Modular kitchen — full Calacatta marble backsplash & flooring",
   },
   {
     src: "/videos/transformations/luxury-bathroom-transformation-2.mp4",
-    caption: "Master bath in premium marble-look",
+    caption: "Spa-style bath — 3D wave wall tile with backlit niche & brass fittings",
   },
   {
     src: "/videos/transformations/luxury-tramformation-3.mp4",
-    caption: "Full home install — Ranchi residence",
+    caption: "Statement kitchen island — backlit onyx front on large-format porcelain",
   },
   {
     src: "/videos/transformations/transformation-1-tile.mp4",
-    caption: "Living-room flooring — premium porcelain",
+    caption: "Living-room makeover — high-gloss large-format floor tiles",
   },
 ];
 
