@@ -14,6 +14,16 @@ export type TileStyle =
 
 export type TileSurface = 'floor' | 'wall' | 'both';
 
+export type TileBrand =
+  | 'kajaria'
+  | 'somany'
+  | 'orientbell'
+  | 'jaquar'
+  | 'cera'
+  | 'rak'
+  | 'johnson'
+  | 'nitco';
+
 export type Tile = {
   id: string;
   name: string;
@@ -26,6 +36,8 @@ export type Tile = {
   featured?: boolean;
   surface?: TileSurface;
   styles?: TileStyle[];
+  brand?: TileBrand;
+  brandSourceUrl?: string;
 };
 
 export const TILE_STYLE_LABELS: Record<TileStyle, string> = {
@@ -41,6 +53,28 @@ export const TILE_STYLE_LABELS: Record<TileStyle, string> = {
   'large-format': 'Large Format',
 };
 
+export const TILE_BRAND_LABELS: Record<TileBrand, string> = {
+  kajaria: 'Kajaria',
+  somany: 'Somany',
+  orientbell: 'Orient Bell',
+  jaquar: 'Jaquar',
+  cera: 'Cera',
+  rak: 'RAK Ceramics',
+  johnson: 'Johnson Tiles',
+  nitco: 'Nitco',
+};
+
+export const TILE_BRAND_PORTALS: Record<TileBrand, string> = {
+  kajaria: 'https://www.kajariaceramics.com/',
+  somany: 'https://www.somanyceramics.com/',
+  orientbell: 'https://www.orientbell.com/',
+  jaquar: 'https://www.jaquar.com/',
+  cera: 'https://www.cera-india.com/',
+  rak: 'https://www.rakceramics.com/india/',
+  johnson: 'https://www.hrjohnsonindia.com/',
+  nitco: 'https://www.nitco.in/',
+};
+
 export const tiles: Tile[] = [
   // ---- Living (6) ----
   {
@@ -54,6 +88,8 @@ export const tiles: Tile[] = [
     featured: true,
     surface: 'both',
     styles: ['marble-look', 'glossy', 'large-format'],
+    brand: 'kajaria',
+    brandSourceUrl: 'https://www.kajariaeternity.com/',
   },
   {
     id: 'terracotta-warmth',
@@ -66,6 +102,8 @@ export const tiles: Tile[] = [
     description: 'Sun-baked terracotta tones with a soft matte finish — a warm base for neutral furnishings.',
     surface: 'floor',
     styles: ['matte', 'stone'],
+    brand: 'nitco',
+    brandSourceUrl: 'https://www.nitco.in/',
   },
   {
     id: 'linen-bone',
@@ -78,6 +116,8 @@ export const tiles: Tile[] = [
     featured: true,
     surface: 'both',
     styles: ['matte', 'large-format'],
+    brand: 'somany',
+    brandSourceUrl: 'https://www.somanyceramics.com/',
   },
   {
     id: 'oak-plank',
@@ -90,6 +130,8 @@ export const tiles: Tile[] = [
     description: 'Realistic oak grain in a durable porcelain plank — the warmth of wood, the resilience of tile.',
     surface: 'floor',
     styles: ['wood-look', 'matte'],
+    brand: 'orientbell',
+    brandSourceUrl: 'https://www.orientbell.com/wood-strips-tiles',
   },
   {
     id: 'basalt-stone',
@@ -101,6 +143,8 @@ export const tiles: Tile[] = [
     description: 'Deep volcanic grey with fine mineral specks — dramatic, contemporary flooring.',
     surface: 'floor',
     styles: ['stone', 'matte'],
+    brand: 'rak',
+    brandSourceUrl: 'https://www.rakceramics.com/india/',
   },
   {
     id: 'concrete-studio',
@@ -112,6 +156,8 @@ export const tiles: Tile[] = [
     description: 'Polished industrial concrete look — minimal, architectural, endlessly versatile.',
     surface: 'both',
     styles: ['concrete', 'matte'],
+    brand: 'kajaria',
+    brandSourceUrl: 'https://www.kajariaceramics.com/glazed-vitrified-tiles',
   },
 
   // ---- Bath (5) ----
@@ -127,6 +173,8 @@ export const tiles: Tile[] = [
     featured: true,
     surface: 'wall',
     styles: ['glossy'],
+    brand: 'somany',
+    brandSourceUrl: 'https://www.somanyceramics.com/',
   },
   {
     id: 'plum-velvet',
@@ -138,6 +186,8 @@ export const tiles: Tile[] = [
     description: 'Rich aubergine purple in a velvety matte — bold, spa-like, indulgent.',
     surface: 'wall',
     styles: ['matte'],
+    brand: 'orientbell',
+    brandSourceUrl: 'https://www.orientbell.com/bathroom-tiles',
   },
   {
     id: 'carrara-white',
@@ -150,6 +200,8 @@ export const tiles: Tile[] = [
     description: 'Classic Carrara marble veining — crisp, bright, the bathroom default done beautifully.',
     surface: 'both',
     styles: ['marble-look', 'large-format'],
+    brand: 'kajaria',
+    brandSourceUrl: 'https://www.kajariaeternity.com/',
   },
   {
     id: 'pebble-mosaic',
@@ -161,6 +213,8 @@ export const tiles: Tile[] = [
     description: 'River-pebble mosaic sheets for spa-style shower floors — grippy underfoot, visually serene.',
     surface: 'floor',
     styles: ['mosaic', 'stone'],
+    brand: 'johnson',
+    brandSourceUrl: 'https://www.hrjohnsonindia.com/',
   },
   {
     id: 'slate-charcoal',
@@ -173,6 +227,8 @@ export const tiles: Tile[] = [
     description: 'Textured charcoal slate with subtle cleft detail — grounding, masculine, modern.',
     surface: 'wall',
     styles: ['stone', 'matte'],
+    brand: 'nitco',
+    brandSourceUrl: 'https://www.nitco.in/',
   },
 
   // ---- Kitchen (5) ----
@@ -187,6 +243,8 @@ export const tiles: Tile[] = [
     featured: true,
     surface: 'both',
     styles: ['marble-look', 'glossy', 'large-format'],
+    brand: 'rak',
+    brandSourceUrl: 'https://www.rakceramics.com/india/',
   },
   {
     id: 'subway-bone',
@@ -199,6 +257,8 @@ export const tiles: Tile[] = [
     description: 'Hand-glazed subway tile in warm bone — the classic kitchen backsplash, refined.',
     surface: 'wall',
     styles: ['glossy', 'handmade'],
+    brand: 'johnson',
+    brandSourceUrl: 'https://www.hrjohnsonindia.com/',
   },
   {
     id: 'copper-splash',
@@ -210,6 +270,8 @@ export const tiles: Tile[] = [
     description: 'Burnished copper metallic finish — a warm, luminous accent behind open shelving.',
     surface: 'wall',
     styles: ['metallic', 'glossy'],
+    brand: 'orientbell',
+    brandSourceUrl: 'https://www.orientbell.com/kitchen-tiles',
   },
   {
     id: 'moss-zellige',
@@ -221,6 +283,8 @@ export const tiles: Tile[] = [
     description: 'Moroccan handmade zellige in deep moss green — every tile unique, every wall alive.',
     surface: 'wall',
     styles: ['handmade', 'glossy'],
+    brand: 'nitco',
+    brandSourceUrl: 'https://www.nitco.in/',
   },
   {
     id: 'herringbone-walnut',
@@ -233,6 +297,8 @@ export const tiles: Tile[] = [
     description: 'Walnut-tone planks laid in herringbone — a rich underfoot statement for open kitchens.',
     surface: 'floor',
     styles: ['wood-look', 'matte'],
+    brand: 'kajaria',
+    brandSourceUrl: 'https://www.kajariaceramics.com/wood-tiles',
   },
 
   // ---- Outdoor (4) ----
@@ -246,6 +312,8 @@ export const tiles: Tile[] = [
     description: 'Natural bluestone look with R11 anti-slip rating — patios, terraces, poolside.',
     surface: 'floor',
     styles: ['stone', 'matte'],
+    brand: 'kajaria',
+    brandSourceUrl: 'https://www.kajariaceramics.com/outdoor-tiles',
   },
   {
     id: 'garden-slate',
@@ -259,6 +327,8 @@ export const tiles: Tile[] = [
     featured: true,
     surface: 'floor',
     styles: ['stone', 'matte'],
+    brand: 'nitco',
+    brandSourceUrl: 'https://www.nitco.in/',
   },
   {
     id: 'terrace-travertine',
@@ -270,6 +340,8 @@ export const tiles: Tile[] = [
     description: 'Warm travertine beige with natural pitting — Mediterranean terrace vibes.',
     surface: 'floor',
     styles: ['stone', 'matte'],
+    brand: 'rak',
+    brandSourceUrl: 'https://www.rakceramics.com/india/',
   },
   {
     id: 'driveway-granite',
@@ -282,6 +354,8 @@ export const tiles: Tile[] = [
     description: 'Flamed granite look in a 30mm paver — engineered for driveways and car-bearing loads.',
     surface: 'floor',
     styles: ['stone', 'matte'],
+    brand: 'kajaria',
+    brandSourceUrl: 'https://www.kajariaceramics.com/outdoor-tiles',
   },
 
   // ---- Sanitaryware (4) ----
@@ -294,6 +368,8 @@ export const tiles: Tile[] = [
     image: 'https://images.unsplash.com/photo-1523350165414-082d792c4bcc?w=1200&q=80',
     description: 'Wall-hung WC + concealed cistern — the clean, contemporary bathroom standard.',
     styles: ['matte'],
+    brand: 'cera',
+    brandSourceUrl: 'https://www.cera-india.com/sanitaryware',
   },
   {
     id: 'counter-basin',
@@ -305,6 +381,8 @@ export const tiles: Tile[] = [
     tint: 'green',
     description: 'Elegant above-counter basin with sculpted rim — a jewel on a stone vanity.',
     styles: ['glossy'],
+    brand: 'jaquar',
+    brandSourceUrl: 'https://www.jaquar.com/sanitaryware',
   },
   {
     id: 'rain-shower',
@@ -316,6 +394,8 @@ export const tiles: Tile[] = [
     tint: 'blue',
     description: 'Oversized overhead rain shower — the daily luxury, delivered.',
     styles: ['metallic'],
+    brand: 'jaquar',
+    brandSourceUrl: 'https://www.jaquar.com/showers',
   },
   {
     id: 'matte-black-mixer',
@@ -326,6 +406,230 @@ export const tiles: Tile[] = [
     image: 'https://images.unsplash.com/photo-1548967199-79324abbe7dc?w=1200&q=80',
     description: 'Precision single-lever mixer in PVD matte black — a statement against any basin.',
     styles: ['matte', 'metallic'],
+    brand: 'cera',
+    brandSourceUrl: 'https://www.cera-india.com/faucets',
+  },
+
+  // ---- Curated brand selections (16 new) ----
+  // Kajaria
+  {
+    id: 'kajaria-vitronite',
+    name: 'Vitronite Onyx',
+    size: '800 × 1600 mm',
+    material: 'Polished Vitrified',
+    category: 'living',
+    image: 'https://images.unsplash.com/photo-1604147495798-57beb5d6af73?w=1200&q=80',
+    description: 'Kajaria Vitronite collection — mirror-polished onyx-look slab with luminous depth, ideal for high-traffic living rooms and lobbies.',
+    surface: 'both',
+    styles: ['marble-look', 'glossy', 'large-format'],
+    brand: 'kajaria',
+    brandSourceUrl: 'https://www.kajariaceramics.com/polished-vitrified-tiles',
+  },
+  {
+    id: 'kajaria-eternity-grande',
+    name: 'Eternity Grande Marble',
+    size: '1200 × 2400 mm',
+    material: 'GVT Mega Slab',
+    category: 'kitchen',
+    image: 'https://images.unsplash.com/photo-1616627451515-d1b8b46d8a4f?w=1200&q=80',
+    description: 'Kajaria Eternity GVT in a book-matched marble — single-slab kitchen islands and floor-to-ceiling backsplashes.',
+    surface: 'both',
+    styles: ['marble-look', 'glossy', 'large-format'],
+    brand: 'kajaria',
+    brandSourceUrl: 'https://www.kajariaeternity.com/',
+  },
+
+  // Somany
+  {
+    id: 'somany-slimtech',
+    name: 'Slimtech Cement',
+    size: '600 × 1200 mm',
+    material: '5mm Slim Porcelain',
+    category: 'living',
+    image: 'https://images.unsplash.com/photo-1615876562842-6e2da94c9cdf?w=1200&q=80',
+    description: 'Somany Slimtech — a 5mm-thin large-format tile in a soft cement finish, perfect for renovations over existing surfaces.',
+    surface: 'both',
+    styles: ['concrete', 'matte', 'large-format'],
+    brand: 'somany',
+    brandSourceUrl: 'https://www.somanyceramics.com/',
+  },
+  {
+    id: 'somany-duragres',
+    name: 'Duragres Travertine',
+    size: '600 × 600 mm',
+    material: 'Glazed Vitrified',
+    category: 'bath',
+    image: 'https://images.unsplash.com/photo-1635684181095-5e6f86c46e9d?w=1200&q=80',
+    description: 'Somany Duragres travertine-look in a soft cream — warm, residential, durable.',
+    surface: 'both',
+    styles: ['stone', 'matte'],
+    brand: 'somany',
+    brandSourceUrl: 'https://www.somanyceramics.com/',
+  },
+
+  // Orient Bell
+  {
+    id: 'orientbell-inspire-wood',
+    name: 'Inspire Smoked Oak',
+    size: '200 × 1200 mm',
+    material: 'Wood-Look GVT',
+    category: 'living',
+    image: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=1200&q=80',
+    description: 'Orient Bell Inspire collection — smoked oak plank with realistic grain texture, an affordable wood-look workhorse.',
+    surface: 'floor',
+    styles: ['wood-look', 'matte'],
+    brand: 'orientbell',
+    brandSourceUrl: 'https://www.orientbell.com/wood-strips-tiles',
+  },
+  {
+    id: 'orientbell-forever-stone',
+    name: 'Forever Limestone',
+    size: '600 × 600 mm',
+    material: 'Glazed Vitrified',
+    category: 'outdoor',
+    image: 'https://images.unsplash.com/photo-1602026142077-3a2a4c66c5a4?w=1200&q=80',
+    description: 'Orient Bell Forever range in a soft limestone tone — a versatile balcony and terrace floor.',
+    surface: 'floor',
+    styles: ['stone', 'matte'],
+    brand: 'orientbell',
+    brandSourceUrl: 'https://www.orientbell.com/outdoor-tiles',
+  },
+
+  // Jaquar
+  {
+    id: 'jaquar-continental-suite',
+    name: 'Continental Bath Suite',
+    size: 'Standard fit',
+    material: 'Vitreous China + PVD',
+    category: 'sanitaryware',
+    image: 'https://images.unsplash.com/photo-1620626011761-996317b8d101?w=1200&q=80',
+    description: 'Jaquar Continental series — a coordinated WC, basin and mixer in chrome-and-white, built for ten-year reliability.',
+    styles: ['glossy', 'metallic'],
+    brand: 'jaquar',
+    brandSourceUrl: 'https://www.jaquar.com/',
+  },
+  {
+    id: 'jaquar-solo-thermostat',
+    name: 'Solo Thermostatic Mixer',
+    size: 'Concealed',
+    material: 'Forged Brass + Chrome',
+    category: 'sanitaryware',
+    image: 'https://images.unsplash.com/photo-1620336655252-369a48ed6b34?w=1200&q=80',
+    description: 'Jaquar Solo thermostatic shower mixer — set the temperature once, hold it through every drop.',
+    styles: ['metallic'],
+    brand: 'jaquar',
+    brandSourceUrl: 'https://www.jaquar.com/showers',
+  },
+
+  // Cera
+  {
+    id: 'cera-senator',
+    name: 'Senator Wall-Hung WC',
+    size: '500 × 350 × 400 mm',
+    material: 'Vitreous China',
+    category: 'sanitaryware',
+    image: 'https://images.unsplash.com/photo-1620626011782-5d8a26d8e9d3?w=1200&q=80',
+    description: 'Cera Senator — a wall-hung WC with rim-free flush technology and a soft-close seat.',
+    styles: ['matte'],
+    brand: 'cera',
+    brandSourceUrl: 'https://www.cera-india.com/sanitaryware',
+  },
+  {
+    id: 'cera-aspire-vanity',
+    name: 'Aspire Console Basin',
+    size: '600 × 450 mm',
+    material: 'Vitreous China',
+    category: 'sanitaryware',
+    image: 'https://images.unsplash.com/photo-1620626011835-3c7e96b6f2bf?w=1200&q=80',
+    description: 'Cera Aspire console basin — a slim-rim countertop basin sitting on a metal frame, an instant guest-bath upgrade.',
+    styles: ['glossy'],
+    brand: 'cera',
+    brandSourceUrl: 'https://www.cera-india.com/basins',
+  },
+
+  // RAK Ceramics
+  {
+    id: 'rak-maximus-mega',
+    name: 'Maximus Mega Slab — Statuario',
+    size: '1200 × 2700 mm',
+    material: '6mm Mega Porcelain',
+    category: 'kitchen',
+    image: 'https://images.unsplash.com/photo-1613843433065-819a04dc232e?w=1200&q=80',
+    description: 'RAK Maximus mega slab in book-matched Statuario — a single seamless surface for kitchen islands, walls and worktops.',
+    featured: true,
+    surface: 'both',
+    styles: ['marble-look', 'glossy', 'large-format'],
+    brand: 'rak',
+    brandSourceUrl: 'https://www.rakceramics.com/india/',
+  },
+  {
+    id: 'rak-lounge-stone',
+    name: 'Lounge Stone Effect',
+    size: '600 × 1200 mm',
+    material: 'Glazed Porcelain',
+    category: 'living',
+    image: 'https://images.unsplash.com/photo-1622372738946-62e02505feb3?w=1200&q=80',
+    description: 'RAK Lounge collection — a lightly textured stone effect in warm greige, elegant and unobtrusive.',
+    surface: 'both',
+    styles: ['stone', 'matte', 'large-format'],
+    brand: 'rak',
+    brandSourceUrl: 'https://www.rakceramics.com/india/',
+  },
+
+  // Johnson Tiles
+  {
+    id: 'johnson-endura',
+    name: 'Endura Industrial Grey',
+    size: '600 × 600 mm',
+    material: 'Heavy-Duty Vitrified',
+    category: 'kitchen',
+    image: 'https://images.unsplash.com/photo-1604147706284-91f4ad8c66e1?w=1200&q=80',
+    description: 'Johnson Endura — a heavy-duty industrial grey vitrified for kitchens, utility rooms and commercial floors.',
+    surface: 'floor',
+    styles: ['concrete', 'matte'],
+    brand: 'johnson',
+    brandSourceUrl: 'https://www.hrjohnsonindia.com/',
+  },
+  {
+    id: 'johnson-marbonite-glory',
+    name: 'Marbonite Glory White',
+    size: '600 × 1200 mm',
+    material: 'Double-Charge Vitrified',
+    category: 'living',
+    image: 'https://images.unsplash.com/photo-1597106776019-b4ecc878c202?w=1200&q=80',
+    description: 'Johnson Marbonite double-charge vitrified — a bright white floor with subtle veining, an Indian classic.',
+    surface: 'floor',
+    styles: ['marble-look', 'glossy'],
+    brand: 'johnson',
+    brandSourceUrl: 'https://www.hrjohnsonindia.com/',
+  },
+
+  // Nitco
+  {
+    id: 'nitco-italica-statuario',
+    name: 'Italica Statuario',
+    size: '800 × 1600 mm',
+    material: 'GVT',
+    category: 'living',
+    image: 'https://images.unsplash.com/photo-1615873968403-89e068629265?w=1200&q=80',
+    description: 'Nitco Italica — Italian-designed Statuario in a glazed vitrified format, a flagship marble look.',
+    surface: 'both',
+    styles: ['marble-look', 'glossy', 'large-format'],
+    brand: 'nitco',
+    brandSourceUrl: 'https://www.nitco.in/',
+  },
+  {
+    id: 'nitco-naturoc-slate',
+    name: 'Naturoc Cleft Slate',
+    size: '300 × 600 mm',
+    material: 'Natural-Finish Vitrified',
+    category: 'outdoor',
+    image: 'https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=1200&q=80',
+    description: 'Nitco Naturoc — a hand-cleft slate-look paver, a robust outdoor surface with deep texture.',
+    surface: 'floor',
+    styles: ['stone', 'matte'],
+    brand: 'nitco',
+    brandSourceUrl: 'https://www.nitco.in/',
   },
 ];
 
@@ -339,4 +643,5 @@ export const CATEGORY_LABELS: Record<TileCategory, string> = {
 
 export const featuredTiles = (): Tile[] => tiles.filter(t => t.featured);
 export const tilesByCategory = (c: TileCategory): Tile[] => tiles.filter(t => t.category === c);
+export const tilesByBrand = (b: TileBrand): Tile[] => tiles.filter(t => t.brand === b);
 export const getTileById = (id: string): Tile | undefined => tiles.find(t => t.id === id);

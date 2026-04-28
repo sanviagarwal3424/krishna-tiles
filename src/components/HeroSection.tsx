@@ -2,27 +2,18 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useRef, useState, useCallback, useMemo } from "react";
+import { useEffect, useRef } from "react";
 import { business, getCallLink, getWhatsAppLink } from "@/data/business";
-import { tiles, type Tile } from "@/data/tiles";
+import { tiles } from "@/data/tiles";
 
-const HERO_WALL_COUNT_DESKTOP = 18;
-const HERO_WALL_COUNT_MOBILE = 12;
-
-function heroTileUrl(src: string) {
-  if (!src.includes("images.unsplash.com")) return src;
-  return src.replace(/([?&])w=\d+/i, "$1w=480").replace(/([?&])q=\d+/i, "$1q=65");
-}
+const BACKDROP_TILE = tiles[4];
+const BACKDROP_SRC = BACKDROP_TILE.image.includes("images.unsplash.com")
+  ? BACKDROP_TILE.image.replace(/([?&])w=\d+/i, "$1w=1920").replace(/([?&])q=\d+/i, "$1q=82")
+  : BACKDROP_TILE.image;
 
 export default function HeroSection() {
   const wrapperRef = useRef<HTMLElement | null>(null);
   const rafRef = useRef<number | null>(null);
-  const [selected, setSelected] = useState<Tile | null>(null);
-
-  const wallTiles = useMemo(
-    () => tiles.slice(0, HERO_WALL_COUNT_DESKTOP),
-    []
-  );
 
   useEffect(() => {
     const el = wrapperRef.current;
@@ -61,18 +52,6 @@ export default function HeroSection() {
     };
   }, []);
 
-  useEffect(() => {
-    if (!selected) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setSelected(null);
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [selected]);
-
-  const handleSelect = useCallback((tile: Tile) => setSelected(tile), []);
-  const handleClose = useCallback(() => setSelected(null), []);
-
   const waHref = getWhatsAppLink(
     "Hi Krishna Tiles, I'd like free expert guidance on choosing tiles."
   );
@@ -80,20 +59,15 @@ export default function HeroSection() {
   return (
     <section ref={wrapperRef} className="hero-wall">
       <div className="hero-wall__stage">
-        <div className="hero-wall__grid" role="list">
-          {wallTiles.map((tile, i) => (
-            <button
-              key={tile.id}
-              type="button"
-              role="listitem"
-              className={`hero-wall__tile${tile.tint ? ` hero-wall__tile--${tile.tint}` : ""}${
-                i >= HERO_WALL_COUNT_MOBILE ? " hero-wall__tile--hide-mobile" : ""
-              }`}
-              style={{ backgroundImage: `url('${heroTileUrl(tile.image)}')` }}
-              onClick={() => handleSelect(tile)}
-              aria-label={`${tile.name}, ${tile.size} — tap for quote`}
-            />
-          ))}
+        <div className="hero-wall__backdrop" aria-hidden="true">
+          <Image
+            src={BACKDROP_SRC}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            style={{ objectFit: "cover" }}
+          />
         </div>
         <div className="hero-wall__spotlight" aria-hidden="true" />
 
@@ -153,73 +127,7 @@ export default function HeroSection() {
             Upper Bazar, Ranchi · Open today 10 AM – 8 PM · Free expert guidance
           </div>
         </div>
-
-        {selected ? (
-          <TileQuotePanel tile={selected} onClose={handleClose} />
-        ) : null}
       </div>
     </section>
-  );
-}
-
-function TileQuotePanel({ tile, onClose }: { tile: Tile; onClose: () => void }) {
-  const ref = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const onDown = (e: MouseEvent) => {
-      if (!ref.current) return;
-      if (!ref.current.contains(e.target as Node)) onClose();
-    };
-    const t = window.setTimeout(() => {
-      window.addEventListener("mousedown", onDown);
-    }, 0);
-    return () => {
-      window.clearTimeout(t);
-      window.removeEventListener("mousedown", onDown);
-    };
-  }, [onClose]);
-
-  const quoteText = `Hi Krishna Tiles, I'm interested in ${tile.name} (${tile.size}). Please share a quote.`;
-  const waHref = getWhatsAppLink(quoteText);
-
-  return (
-    <div
-      ref={ref}
-      className="hero-panel"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="hero-panel-name"
-    >
-      <button
-        type="button"
-        className="hero-panel__close"
-        aria-label="Close"
-        onClick={onClose}
-      >
-        ×
-      </button>
-      <div className="hero-panel__label">Selected Tile</div>
-      <h3 id="hero-panel-name" className="hero-panel__name">{tile.name}</h3>
-      <p className="hero-panel__meta">
-        {tile.size} · {tile.material}
-      </p>
-      <p className="hero-panel__desc">{tile.description}</p>
-      <div className="hero-panel__ctas">
-        <a
-          href={waHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hero-wall__cta hero-wall__cta--primary hero-panel__cta"
-        >
-          WhatsApp Quote
-        </a>
-        <a
-          href={getCallLink()}
-          className="hero-wall__cta hero-wall__cta--secondary hero-panel__cta"
-        >
-          Call for a Quote
-        </a>
-      </div>
-    </div>
   );
 }

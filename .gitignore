@@ -48,3 +48,8 @@ next-env.d.ts
 .playwright-mcp/
 docs/superpowers/artifacts/
 .superpowers/
+
+# debug screenshots at repo root (keep public/ images committed)
+/*.png
+/*.jpeg
+/*.jpg
