@@ -47,7 +47,7 @@ export const brands: Brand[] = [
     categories: ["Floor Tiles", "Wall Tiles", "Bathroom"],
     priceRange: "₹40 – ₹160/sq.ft",
     intro:
-      "Somany is the design-forward choice when you want pattern variety beyond the standard marble-look. Krishna Tiles stocks their Slimtech thin-bodies, Duragres double-charge floors, and a rotating set of digital prints. If you're remodelling and want a specific motif — geometric, terrazzo, terracotta — Somany is usually where we start the search.",
+      "Somany is the design-forward choice when you want pattern variety beyond the standard marble-look. Krishna Tiles in Ranchi stocks their Slimtech thin-bodies, Duragres double-charge floors, and a rotating set of digital prints across 600×600, 600×1200, and 800×1600 formats. If you're remodelling and want a specific motif — geometric, terrazzo, terracotta, or contemporary stone — Somany is usually where we start the search. Authorised dealer; batch numbers are kept on file so future top-up orders match shade.",
     categoryNotes: {
       living: "Digital-print GVT with a deeper catalogue of patterns than most Indian brands.",
       bath: "Glazed wall tiles in 300×450 and 300×600 — strong design variety.",
@@ -69,7 +69,7 @@ export const brands: Brand[] = [
     categories: ["Floor Tiles", "Wall Tiles", "Outdoor"],
     priceRange: "₹35 – ₹120/sq.ft",
     intro:
-      "Orient Bell is our strongest mid-range pick. Their Inspire and Forever ranges give you premium GVT looks at sub-Kajaria pricing — useful when you're tiling a large area or working to a budget without dropping to base ceramics. Krishna Tiles carries the full design catalogue at the showroom.",
+      "Orient Bell is our strongest mid-range pick at Krishna Tiles in Ranchi. Their Inspire and Forever ranges give you premium GVT looks at sub-Kajaria pricing — useful when you're tiling a large area or working to a tight budget without dropping to base ceramics. The Forever Aroma anti-bacterial line is a quiet bonus for kitchens and bathrooms. We carry the full design catalogue at the showroom; samples ship to your site within a day.",
     categoryNotes: {
       living: "Wood-look and stone-look GVT in 600×1200 — best mid-range value.",
       bath: "Patterned wall tiles with anti-skid floor pairings already coordinated.",
@@ -91,7 +91,7 @@ export const brands: Brand[] = [
     categories: ["Sanitaryware", "Bath Fittings", "Shower Systems"],
     priceRange: "₹3,000 – ₹80,000",
     intro:
-      "Jaquar is the brand to specify when the bathroom is the centrepiece of the build. Krishna Tiles carries their Continental, Solo, and Artize ranges — single-lever mixers, thermostatic showers, complete WC suites, and the wellness rain-shower systems. Authorised dealer for Ranchi: warranty and AMC handled locally.",
+      "Jaquar is the brand to specify when the bathroom is the centrepiece of the build. Krishna Tiles carries their Continental, Solo, and Artize ranges in our Ranchi showroom — single-lever mixers, thermostatic showers, complete WC suites, sensor-driven urinals, and the wellness rain-shower systems. We have functional mock-ups so you can feel the lever action and water pressure before you commit. Authorised dealer for Ranchi: warranty claims, AMC, and post-sale service are handled locally without sending you back to Delhi.",
     categoryNotes: {
       sanitaryware: "Complete suites — WC, basin, urinal — with matched faucet sets.",
       bath: "Premium tap, mixer, and shower systems including thermostatic.",
@@ -112,7 +112,7 @@ export const brands: Brand[] = [
     categories: ["Sanitaryware", "Bathroom Tiles", "Faucets"],
     priceRange: "₹30 – ₹100/sq.ft",
     intro:
-      "Cera covers the whole bathroom in one purchase order — sanitaryware, faucets, and bathroom tiles. Krishna Tiles uses Cera for builder projects in Ranchi where you need a coordinated suite at a reasonable budget. Quality is solid; the design language is calmer than Jaquar but more affordable.",
+      "Cera covers the whole bathroom in one purchase order — sanitaryware, faucets, bathroom tiles, and wellness products. Krishna Tiles uses Cera for builder projects and value-conscious renovations across Ranchi where you need a coordinated suite at a reasonable budget. Quality is solid; the design language is calmer than Jaquar but lands at roughly 30-40% lower pricing across matching SKUs. We keep the popular Senator and Aspire suites stocked so you don't wait on shipping for standard orders.",
     categoryNotes: {
       sanitaryware: "Senator and Aspire suites — full WC, basin, faucet sets.",
       bath: "Affordable single-lever mixers and shower roses.",
@@ -133,7 +133,7 @@ export const brands: Brand[] = [
     categories: ["Floor Tiles", "Wall Tiles", "Large Format"],
     priceRange: "₹80 – ₹250/sq.ft",
     intro:
-      "RAK Ceramics is the international name in our brand list. UAE-headquartered, used in five-star hotels and high-end residences worldwide. Krishna Tiles brings in their Maximus large-format slabs and the Lounge stone-look series — best for villas, hospitality interiors, or any project where the tile becomes the architecture.",
+      "RAK Ceramics is the international name in our brand list. UAE-headquartered, used in five-star hotels and high-end residences worldwide. Krishna Tiles brings in their Maximus large-format slabs (up to 1200×2400) and the Lounge stone-look porcelain series for Ranchi clients — best for villas, hospitality interiors, or any project where the tile becomes the architecture. Stock includes the most-asked-for marble-look slabs; specific finishes are ordered in with a 10-14 day lead time. Sample panels available to take home.",
     categoryNotes: {
       living: "Maximus 1200×2400 large-format slabs — book-matched marble looks.",
       outdoor: "R11 anti-slip stone-look porcelain for pool surrounds and patios.",
@@ -154,7 +154,7 @@ export const brands: Brand[] = [
     categories: ["Floor Tiles", "Wall Tiles", "Kitchen"],
     priceRange: "₹30 – ₹90/sq.ft",
     intro:
-      "Johnson Tiles is the workhorse end of our catalogue — H&R Johnson has been making tiles in India since 1958. Krishna Tiles carries their Endura wear-rated range and the Marbonite double-charge series. Reliable for builder projects, rental refurbishments, and budget-led residential work where you want known-good quality without the premium-brand markup.",
+      "Johnson Tiles is the workhorse end of our catalogue — H&R Johnson has been making tiles in India since 1958, the country's longest-running ceramic operation. Krishna Tiles carries their Endura wear-rated range and the Marbonite double-charge series for Ranchi clients. Reliable for builder projects, rental refurbishments, and budget-led residential work where you want known-good quality without the premium-brand markup. Batch matching is dependable across re-orders, which is why builders return to Johnson for phased multi-block sites.",
     categoryNotes: {
       living: "Marbonite double-charge in popular 600×600 and 600×1200 sizes.",
       kitchen: "Endura wear-rated tiles for high-traffic kitchen floors.",
@@ -176,7 +176,7 @@ export const brands: Brand[] = [
     categories: ["Floor Tiles", "Marble Tiles", "Natural Stone"],
     priceRange: "₹50 – ₹180/sq.ft",
     intro:
-      "Nitco is our pick when you want the look of imported Italian marble without the imported price tag. Their Italica Statuario and Naturoc series are the headline ranges at Krishna Tiles — book-matched marble veining, polished finishes, and natural-stone replicas that read convincingly underfoot.",
+      "Nitco is our pick when you want the look of imported Italian marble without the imported price tag. Their Italica Statuario and Naturoc series are the headline ranges at Krishna Tiles in Ranchi — book-matched marble veining, polished finishes, and natural-stone replicas that read convincingly underfoot. The 800×1600 polished format has been the top-selling living-room floor of the year for our customers. Sample slabs are at the showroom; we'll lay them dry on your room's flooring base before you decide.",
     categoryNotes: {
       living: "Italica polished marble-look in large 800×1600 — premium living-room floors.",
       outdoor: "Naturoc stone-look textured porcelain for terraces and yards.",
