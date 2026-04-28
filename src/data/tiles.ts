@@ -14,14 +14,8 @@ export type TileStyle =
 
 export type TileSurface = 'floor' | 'wall' | 'both';
 
+// TileFinish = physical surface texture; TileStyle's 'matte'/'glossy' = aesthetic look. Set `finish` for texture, `styles` for look.
 export type TileFinish = 'matte' | 'glossy' | 'lappato' | 'textured';
-
-export const TILE_FINISH_LABELS: Record<TileFinish, string> = {
-  matte: 'Matte',
-  glossy: 'Glossy',
-  lappato: 'Lappato',
-  textured: 'Textured',
-};
 
 export type TileBrand =
   | 'kajaria'
@@ -84,6 +78,13 @@ export const TILE_BRAND_PORTALS: Record<TileBrand, string> = {
   rak: 'https://www.rakceramics.com/india/',
   johnson: 'https://www.hrjohnsonindia.com/',
   nitco: 'https://www.nitco.in/',
+};
+
+export const TILE_FINISH_LABELS: Record<TileFinish, string> = {
+  matte: 'Matte',
+  glossy: 'Glossy',
+  lappato: 'Lappato',
+  textured: 'Textured',
 };
 
 export const tiles: Tile[] = [
