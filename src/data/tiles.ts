@@ -14,6 +14,15 @@ export type TileStyle =
 
 export type TileSurface = 'floor' | 'wall' | 'both';
 
+export type TileFinish = 'matte' | 'glossy' | 'lappato' | 'textured';
+
+export const TILE_FINISH_LABELS: Record<TileFinish, string> = {
+  matte: 'Matte',
+  glossy: 'Glossy',
+  lappato: 'Lappato',
+  textured: 'Textured',
+};
+
 export type TileBrand =
   | 'kajaria'
   | 'somany'
@@ -38,6 +47,8 @@ export type Tile = {
   styles?: TileStyle[];
   brand?: TileBrand;
   brandSourceUrl?: string;
+  finish?: TileFinish;
+  addedAt?: string; // ISO YYYY-MM-DD
 };
 
 export const TILE_STYLE_LABELS: Record<TileStyle, string> = {
