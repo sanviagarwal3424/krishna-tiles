@@ -8,11 +8,10 @@ export default function Footer() {
         <div className="footer-redesigned__col">
           <h3>Shop</h3>
           <Link href="/products">All Products</Link>
-          <Link href="/products?category=floor">Floor Tiles</Link>
-          <Link href="/products?category=wall">Wall Tiles</Link>
-          <Link href="/products?category=bathroom">Bathroom Tiles</Link>
-          <Link href="/products?category=kitchen">Kitchen Tiles</Link>
-          <Link href="/products?category=outdoor">Outdoor Tiles</Link>
+          <Link href="/products?category=living">Living</Link>
+          <Link href="/products?category=bath">Bath</Link>
+          <Link href="/products?category=kitchen">Kitchen</Link>
+          <Link href="/products?category=outdoor">Outdoor</Link>
           <Link href="/products?category=sanitaryware">Sanitaryware</Link>
           <Link href="/brands">Brands</Link>
         </div>
