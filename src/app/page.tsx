@@ -118,12 +118,12 @@ export default function HomePage() {
 
       <section className="rd-section rd-section--light home-brands">
         <header className="home-brands__header">
-          <p className="rd-eyebrow">Partners</p>
+          <p className="rd-eyebrow">Auth. Dealer &amp; Distributor</p>
           <h2 className="rd-display">Brands we carry</h2>
         </header>
-        <div className="home-brands__strip">
+        <div className="home-brands__grid">
           {business.brands.map((b) => (
-            <span key={b} className="home-brands__chip">{b}</span>
+            <div key={b} className="home-brands__cell">{b}</div>
           ))}
         </div>
       </section>
