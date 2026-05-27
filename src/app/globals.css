@@ -2782,3 +2782,331 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 640px) {
   .product-detail__enquiry { padding: 20px; }
 }
+
+/* ===== TILE SHOWROOM PAGE ===== */
+.showroom {
+  background: var(--color-bg);
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.showroom__hero {
+  background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-primary-light) 100%);
+  color: var(--color-text-on-dark);
+  padding: 6rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.showroom__hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.showroom__hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.showroom__title {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin: 0 0 1rem 0;
+  line-height: 1.1;
+}
+
+.showroom__subtitle {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 0 0 1.5rem 0;
+  opacity: 0.95;
+}
+
+.showroom__description {
+  font-size: 1.05rem;
+  opacity: 0.85;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Main Content */
+.showroom__content {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+/* Brand Gallery */
+.showroom__brand-gallery {
+  margin-bottom: 8rem;
+}
+
+.showroom__brand-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.showroom__brand-name {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.5px;
+  color: var(--color-text-heading);
+}
+
+.showroom__brand-tagline {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  margin: 0;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+.showroom__brand-cta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: var(--color-text-heading);
+  color: var(--color-bg);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.showroom__brand-cta:hover {
+  background: var(--color-primary);
+  gap: 1rem;
+}
+
+.showroom__brand-cta svg {
+  transition: transform 0.3s ease;
+}
+
+.showroom__brand-cta:hover svg {
+  transform: translateX(4px);
+}
+
+/* Tiles Grid - Premium Masonry */
+.showroom__tiles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.showroom__tile-item {
+  position: relative;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.2, 0, 0.1, 1);
+}
+
+.showroom__tile-item:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+}
+
+/* Size variations for visual interest */
+.showroom__tile-item--size-0 {
+  grid-column: span 1;
+}
+
+.showroom__tile-item--size-1 {
+  grid-column: span 1;
+}
+
+.showroom__tile-item--size-2 {
+  grid-column: span 1;
+}
+
+/* Empty State */
+.showroom__empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+/* CTA Section */
+.showroom__cta-section {
+  background: var(--color-bg-section);
+  padding: 5rem 2rem;
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+}
+
+.showroom__cta-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.showroom__cta-section h3 {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  color: var(--color-text-heading);
+}
+
+.showroom__cta-section p {
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  margin: 0 0 2rem 0;
+  line-height: 1.6;
+}
+
+.showroom__cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.showroom__cta-btn {
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border-radius: 0;
+}
+
+.showroom__cta-btn--primary {
+  background: var(--color-text-heading);
+  color: var(--color-bg);
+}
+
+.showroom__cta-btn--primary:hover {
+  background: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.showroom__cta-btn--secondary {
+  background: transparent;
+  color: var(--color-text-heading);
+  border: 2px solid var(--color-text-heading);
+}
+
+.showroom__cta-btn--secondary:hover {
+  background: var(--color-text-heading);
+  color: var(--color-bg);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .showroom__hero {
+    padding: 4rem 2rem;
+  }
+
+  .showroom__title {
+    font-size: 2.8rem;
+  }
+
+  .showroom__content {
+    padding: 4rem 1.5rem;
+  }
+
+  .showroom__tiles-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .showroom__brand-name {
+    font-size: 2.2rem;
+  }
+
+  .showroom__brand-intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .showroom__brand-cta {
+    align-self: flex-start;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .showroom__hero {
+    padding: 3rem 1rem;
+  }
+
+  .showroom__title {
+    font-size: 2rem;
+    letter-spacing: 0;
+  }
+
+  .showroom__subtitle {
+    font-size: 1.1rem;
+  }
+
+  .showroom__description {
+    font-size: 1rem;
+  }
+
+  .showroom__content {
+    padding: 3rem 1rem;
+  }
+
+  .showroom__brand-gallery {
+    margin-bottom: 4rem;
+  }
+
+  .showroom__brand-name {
+    font-size: 1.8rem;
+  }
+
+  .showroom__brand-tagline {
+    font-size: 0.95rem;
+  }
+
+  .showroom__tiles-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .showroom__cta-section {
+    padding: 3rem 1rem;
+  }
+
+  .showroom__cta-section h3 {
+    font-size: 1.6rem;
+  }
+
+  .showroom__cta-buttons {
+    flex-direction: column;
+  }
+
+  .showroom__cta-btn {
+    width: 100%;
+  }
+}

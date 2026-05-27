@@ -8,6 +8,7 @@ import { business } from "@/data/business";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/products", label: "Products" },
+  { href: "/tiles", label: "Showroom" },
   { href: "/brands", label: "Brands" },
   { href: "/gallery", label: "Gallery" },
   { href: "/about", label: "About" },
