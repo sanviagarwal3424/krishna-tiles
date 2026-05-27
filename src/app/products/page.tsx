@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FilterBar from "@/components/products/FilterBar";
-import StyleFilterBar from "@/components/products/StyleFilterBar";
 import ProductCard from "@/components/ProductCard";
 import CTAStrip from "@/components/CTAStrip";
 import JsonLd from "@/components/JsonLd";
 import {
   tiles,
-  TILE_STYLE_LABELS,
   type TileCategory,
   type TileStyle,
 } from "@/data/tiles";
@@ -28,7 +26,6 @@ const CATEGORIES: Array<{ slug: string; label: string }> = [
   { slug: "bath", label: "Bath" },
   { slug: "kitchen", label: "Kitchen" },
   { slug: "outdoor", label: "Outdoor" },
-  { slug: "sanitaryware", label: "Sanitaryware" },
 ];
 
 const VALID_CATEGORIES: TileCategory[] = [
@@ -36,19 +33,6 @@ const VALID_CATEGORIES: TileCategory[] = [
   "bath",
   "kitchen",
   "outdoor",
-  "sanitaryware",
-];
-
-const STYLE_FILTERS: Array<{ slug: TileStyle | "all"; label: string }> = [
-  { slug: "all", label: "All Styles" },
-  { slug: "marble-look", label: TILE_STYLE_LABELS["marble-look"] },
-  { slug: "wood-look", label: TILE_STYLE_LABELS["wood-look"] },
-  { slug: "stone", label: TILE_STYLE_LABELS.stone },
-  { slug: "matte", label: TILE_STYLE_LABELS.matte },
-  { slug: "glossy", label: TILE_STYLE_LABELS.glossy },
-  { slug: "large-format", label: TILE_STYLE_LABELS["large-format"] },
-  { slug: "mosaic", label: TILE_STYLE_LABELS.mosaic },
-  { slug: "handmade", label: TILE_STYLE_LABELS.handmade },
 ];
 
 const VALID_STYLES = new Set<TileStyle>([
@@ -121,18 +105,12 @@ export default async function ProductsPage({ searchParams }: PageProps) {
             Every tile we carry
           </h1>
           <p className="rd-body products-hero__line">
-            {filtered.length} {filtered.length === 1 ? "tile" : "tiles"} &middot;
-            visit the Upper Bazar showroom to see each in person.
+            Visit the Upper Bazar showroom to see each in person.
           </p>
         </div>
       </section>
 
       <FilterBar categories={CATEGORIES} activeSlug={activeCategory} />
-      <StyleFilterBar
-        styles={STYLE_FILTERS}
-        activeSlug={activeStyle}
-        activeCategory={activeCategory}
-      />
 
       <section className="rd-section rd-section--light products-grid-section">
         <div className="rd-container">
