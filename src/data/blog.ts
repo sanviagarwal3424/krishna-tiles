@@ -349,6 +349,8 @@ Whether you're building a new house, renovating a flat, or working on a commerci
 
 ![Kajaria Statuario Premium 800x1600mm polished vitrified tile](https://5.imimg.com/data5/SELLER/Default/2021/6/UJ/BJ/BI/38967491/kajaria-floor-tile-1000x1000.jpg)
 
+![Living room with polished marble-look floor tiles — Statuario finish](https://images.unsplash.com/photo-1761602866012-ae9f888255dc?w=800&q=80)
+
 - **Size**: 800 × 1600 mm
 - **Material**: Glazed Porcelain
 - **Finish**: High-gloss polished
@@ -361,6 +363,8 @@ This is the tile that walks out of our showroom the fastest. The Statuario Premi
 ## 2. Kajaria Eternity Grande Marble (Kitchen/Feature Wall)
 
 ![Kajaria Eternity Grande Marble 1200x2400mm GVT mega slab](https://5.imimg.com/data5/SELLER/PDFImage/2026/1/579063587/EJ/QI/EX/262145004/1200x2400-mm-kajaria-eternity-the-ultima-tile-1000x1000.png)
+
+![Kitchen with large format marble tile backsplash and island](https://images.unsplash.com/photo-1722605090433-41d1183a792d?w=800&q=80)
 
 - **Size**: 1200 × 2400 mm
 - **Material**: GVT Mega Slab
@@ -375,6 +379,8 @@ The biggest tile in our Kajaria collection. At 1200x2400mm, a single slab covers
 
 ![Kajaria Carrara White 600x1200mm glossy vitrified tile](https://5.imimg.com/data5/SELLER/Default/2023/6/319501583/HT/OX/BX/138810177/tt1-1000x1000.jpeg)
 
+![Bathroom with marble-look wall tiles — spa-like Carrara finish](https://images.unsplash.com/photo-1754788358645-d6e6cca12e25?w=800&q=80)
+
 - **Size**: 600 × 1200 mm
 - **Material**: Glazed Porcelain
 - **Finish**: Glossy
@@ -388,6 +394,8 @@ Clean white marble look with subtle grey veining — the Carrara White is our be
 
 ![Kajaria wood-look glazed vitrified plank tile in walnut finish](https://5.imimg.com/data5/SELLER/Default/2025/9/545151341/BO/BK/DK/48516260/roots-lend-wood-digital-glazed-vitrified-ceramic-tile-1000x1000.jpeg)
 
+![Kitchen and dining area with wood-look floor tiles](https://images.unsplash.com/photo-1774200981075-a728eaaa3824?w=800&q=80)
+
 - **Size**: 100 × 600 mm
 - **Material**: Wood-Look Porcelain
 - **Finish**: Matte textured
@@ -400,6 +408,8 @@ Want the warmth of wooden flooring without the maintenance headaches? The Herrin
 ## 5. Kajaria Bluestone Outdoor (Balcony & Parking)
 
 ![Bluestone grey 600x600mm 20mm anti-slip outdoor paver tile](https://tilemall.com.au/cdn/shop/products/Paver-Blue-Stone20-600x600-Grip-Grey_9a151c7e-71f1-4648-97b1-6c3739b41af0.jpg)
+
+![Outdoor terrace with grey stone paver tiles and greenery](https://images.unsplash.com/photo-1697421472608-84e71a8a24b1?w=800&q=80)
 
 - **Size**: 600 × 600 mm
 - **Material**: 20mm Anti-Slip Porcelain
@@ -444,6 +454,8 @@ At Krishna Tiles, we've helped hundreds of Ranchi families choose bathroom tiles
 
 ![Kajaria anti-skid matte bathroom floor tile](https://5.imimg.com/data5/GLADMIN/Default/2023/4/303435621/PQ/KG/XF/18432698/kajaria-anti-skid-bathroom-tiles-1000x1000.jpg)
 
+![Modern bathroom with anti-skid floor tiles installed](https://images.unsplash.com/photo-1613849925362-38fb4c16ff36?w=800&q=80)
+
 - **Size**: 300 × 300 mm / 600 × 600 mm
 - **Material**: Matte Porcelain
 - **Finish**: Anti-skid textured
@@ -456,6 +468,8 @@ Safety first. Bathroom floors get wet every day, and a glossy tile here is an ac
 ## 2. Somany Glossy Ceramic Wall Tile (Best for Bright Walls)
 
 ![Somany glossy ceramic wall tiles for bathrooms](https://5.imimg.com/data5/SELLER/Default/2022/10/RH/EE/KY/28875807/somany-ceramic-wall-tiles-1000x1000.jpg)
+
+![Bright bathroom with glossy white wall tiles](https://images.unsplash.com/photo-1721564130772-c9ee561ab87b?w=800&q=80)
 
 - **Size**: 300 × 600 mm
 - **Material**: Glossy Ceramic
@@ -470,6 +484,8 @@ Glossy wall tiles bounce light around the room, making even a 5x7 bathroom feel 
 
 ![Johnson Tiles decorative glossy bathroom tile](https://5.imimg.com/data5/SELLER/Default/2022/5/WL/BG/YQ/31488137/whatsapp-image-2022-05-24-at-4-05-17-pm-1000x1000.jpeg)
 
+![Bathroom with decorative accent tile wall and modern fixtures](https://images.unsplash.com/photo-1650894622076-e09ab837c502?w=800&q=80)
+
 - **Size**: 300 × 600 mm / 300 × 450 mm
 - **Material**: Glazed Ceramic
 - **Finish**: Glossy with printed patterns
@@ -483,6 +499,8 @@ If you want your bathroom to have personality, Johnson's decorative range delive
 
 ![Orient Bell ceramic wall tiles for bathroom elevation](https://5.imimg.com/data5/SELLER/Default/2022/2/YO/RJ/WD/9489120/orient-bell-wall-tiles-1000x1000.jpg)
 
+![Clean minimal bathroom with light wall tiles](https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80)
+
 - **Size**: 300 × 450 mm / 300 × 600 mm
 - **Material**: Ceramic
 - **Finish**: Glossy / Satin
@@ -495,6 +513,8 @@ Orient Bell gives you reliable quality at Ranchi's most affordable price point. 
 ## 5. Kajaria Carrara White (Best Premium Pick)
 
 ![Kajaria Carrara White glossy marble-look tile for luxury bathrooms](https://5.imimg.com/data5/GLADMIN/Default/2023/4/303435623/CD/VS/RE/18432698/kajaria-anti-skid-bathroom-tiles-1000x1000.jpg)
+
+![Luxury bathroom with marble-look wall tiles — spa-like Carrara finish](https://images.unsplash.com/photo-1754522711595-84428937b07a?w=800&q=80)
 
 - **Size**: 600 × 1200 mm
 - **Material**: Glazed Porcelain
