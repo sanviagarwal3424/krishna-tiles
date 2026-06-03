@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   title: "Visit the Showroom — Krishna Tiles | Upper Bazar, Ranchi",
   description: `See 5,000+ tile designs at ${business.address.full}. Open Mon–Sat, 10 AM – 8 PM. Call ${business.phoneDisplay} or WhatsApp for free expert guidance.`,
   alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Visit the Showroom — Krishna Tiles | Upper Bazar, Ranchi",
+    description: `See 5,000+ tile designs at ${business.address.full}. Open Mon–Sat, 10 AM – 8 PM. Free expert guidance.`,
+    type: "website",
+  },
 };
 
 export default function ContactPage() {

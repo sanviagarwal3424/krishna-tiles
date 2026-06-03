@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   description:
     "20+ years serving Ranchi and Jharkhand. Authorised for 50+ premium brands, 5,000+ designs on display, trusted by homeowners, architects and builders.",
   alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Krishna Tiles — Ranchi's Premium Tile Authority Since 2004",
+    description: "20+ years serving Ranchi. 50+ brands, 5,000+ designs. Trusted by homeowners, architects & builders across Jharkhand.",
+    type: "website",
+  },
 };
 
 export default function AboutPage() {

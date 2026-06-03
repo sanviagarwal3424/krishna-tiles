@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   description:
     "Authorised dealer for 50+ premium brands — Kajaria, Somany, Orient Bell, Jaquar, Cera, RAK Ceramics, Johnson Tiles, Nitco. Genuine, warranty-backed. Upper Bazar, Ranchi.",
   alternates: { canonical: "/brands" },
+  openGraph: {
+    title: "Authorised Brand Partners — Krishna Tiles Ranchi",
+    description: "Authorised dealer for Kajaria, Somany, Jaquar, Cera, RAK Ceramics, Johnson & Nitco in Ranchi. Genuine, warranty-backed tiles & sanitaryware.",
+    type: "website",
+  },
 };
 
 export default function BrandsPage() {

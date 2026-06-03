@@ -18,7 +18,7 @@ interface PageProps {
   params: Promise<{ id: string }>;
 }
 
-const SITE_URL = "https://krishnatiles.com";
+const SITE_URL = "https://krishnatiles.in";
 
 export async function generateStaticParams() {
   return tiles.map((t) => ({ id: t.id }));

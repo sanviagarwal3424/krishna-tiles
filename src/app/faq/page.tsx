@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   description:
     "Tile sizes, brands, delivery in Ranchi, installation, EMI, returns — clear answers from Krishna Tiles showroom at Upper Bazar, Ranchi.",
   alternates: { canonical: "/faq" },
+  openGraph: {
+    title: "FAQ — Krishna Tiles Ranchi",
+    description: "Common questions about tile sizes, brands, delivery, installation, EMI & returns at Krishna Tiles, Upper Bazar, Ranchi.",
+    type: "website",
+  },
 };
 
 const faqs = [

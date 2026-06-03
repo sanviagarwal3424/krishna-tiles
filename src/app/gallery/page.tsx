@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   description:
     "Real tile installations in Ranchi homes — bathrooms, kitchens, living rooms, outdoor terraces. Find inspiration from work we've done for customers across Jharkhand.",
   alternates: { canonical: "/gallery" },
+  openGraph: {
+    title: "Installation Gallery — Real Ranchi Homes | Krishna Tiles",
+    description: "Real tile installations in Ranchi homes — bathrooms, kitchens, living rooms & outdoor terraces. Get inspired for your renovation.",
+    type: "website",
+  },
 };
 
 const galleryItems = [

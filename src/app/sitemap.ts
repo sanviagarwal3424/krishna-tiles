@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 import { tiles } from "@/data/tiles";
+import { brands } from "@/data/brands";
 
-const SITE_URL = "https://krishnatiles.com";
+const SITE_URL = "https://krishnatiles.in";
 
 const staticRoutes: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] }[] = [
   { path: "/", priority: 1.0, changeFrequency: "weekly" },
@@ -14,6 +15,7 @@ const staticRoutes: { path: string; priority: number; changeFrequency: MetadataR
   { path: "/about", priority: 0.6, changeFrequency: "yearly" },
   { path: "/testimonials", priority: 0.6, changeFrequency: "monthly" },
   { path: "/blog", priority: 0.7, changeFrequency: "weekly" },
+  { path: "/sanitaryware", priority: 0.8, changeFrequency: "monthly" },
   { path: "/faq", priority: 0.5, changeFrequency: "yearly" },
 ];
 
@@ -61,5 +63,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...staticEntries, ...categoryEntries, ...tileEntries, ...blogEntries];
+  const brandEntries: MetadataRoute.Sitemap = brands.map((b) => ({
+    url: `${SITE_URL}/brands/${b.id}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticEntries, ...categoryEntries, ...tileEntries, ...blogEntries, ...brandEntries];
 }

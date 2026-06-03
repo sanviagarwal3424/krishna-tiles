@@ -3,16 +3,37 @@ import { testimonials } from "@/data/testimonials";
 import TestimonialCard from "@/components/TestimonialCard";
 import CTAStrip from "@/components/CTAStrip";
 import { business } from "@/data/business";
+import JsonLd from "@/components/JsonLd";
+
+const SITE_URL = "https://krishnatiles.in";
+
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: business.name,
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: business.rating,
+    reviewCount: business.reviews,
+  },
+};
 
 export const metadata: Metadata = {
   title: "Customer Reviews — Krishna Tiles Ranchi",
   description:
     "See what our customers say about Krishna Tiles. 10,000+ happy customers across Ranchi trust us for premium tiles & sanitaryware.",
+  alternates: { canonical: "/testimonials" },
+  openGraph: {
+    title: "Customer Reviews — Krishna Tiles Ranchi",
+    description: "10,000+ happy customers trust Krishna Tiles for premium tiles & sanitaryware in Ranchi.",
+    type: "website",
+  },
 };
 
 export default function TestimonialsPage() {
   return (
     <>
+      <JsonLd data={reviewSchema} />
       <section className="section section--alt" style={{ paddingTop: "4rem" }}>
         <div className="container" style={{ textAlign: "center" }}>
           <div className="hero__badge" style={{ display: "inline-block", marginBottom: "1rem" }}>

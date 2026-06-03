@@ -43,6 +43,7 @@ export default function Footer() {
 
       <div className="footer-redesigned__bottom">
         &copy; {new Date().getFullYear()} {business.name} &middot; Upper Bazar, Ranchi
+        &middot; <Link href="/faq">FAQ</Link>
       </div>
     </footer>
   );

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { business, getCallLink, getWhatsAppLink } from "@/data/business";
 import { tiles } from "@/data/tiles";
+import { WhatsappLogo, Phone, MapPin, Star } from "@phosphor-icons/react";
 
 const BACKDROP_TILE = tiles[4];
 const BACKDROP_SRC = BACKDROP_TILE.image.includes("images.unsplash.com")
@@ -71,60 +72,59 @@ export default function HeroSection() {
         </div>
         <div className="hero-wall__spotlight" aria-hidden="true" />
 
-        <div className="hero-wall__crest">
-          <ul className="hero-wall__trust" aria-label="Trust indicators">
-            <li>Since 2004</li>
-            <li aria-hidden="true">·</li>
-            <li>{business.stats.brandsStocked}+ Brands</li>
-            <li aria-hidden="true">·</li>
-            <li>{business.stats.tileVariety.toLocaleString()}+ Designs</li>
-            <li aria-hidden="true">·</li>
-            <li>
-              <span aria-hidden="true">★</span> {business.rating} Google
-            </li>
-          </ul>
+        <div className="hero-wall__crest hero-wall__crest--split">
+          {/* Left: Content */}
+          <div className="hero-wall__content">
+            <div className="rd-eyebrow" style={{ marginBottom: 16 }}>
+              Since 2004 &middot; {business.stats.brandsStocked}+ Brands &middot;{" "}
+              <Star size={12} weight="fill" style={{ verticalAlign: "-1px" }} />{" "}
+              {business.rating} Google
+            </div>
 
-          <Image
-            src="/images/logo-transparent.png"
-            alt="Krishna Tiles"
-            className="hero-wall__logo"
-            width={480}
-            height={160}
-            priority
-          />
+            <Image
+              src="/images/logo-transparent.png"
+              alt="Krishna Tiles"
+              className="hero-wall__logo"
+              width={480}
+              height={160}
+              priority
+            />
 
-          <div className="hero-wall__rule" />
+            <hr className="rd-rule" style={{ margin: "20px 0 16px" }} />
 
-          <h1 className="hero-wall__headline">
-            Ranchi&apos;s premium destination for tiles,
-            <br />
-            sanitaryware &amp; luxury surfaces.
-          </h1>
+            <h1 className="hero-wall__headline hero-wall__headline--left">
+              Ranchi&apos;s premium destination for tiles, sanitaryware &amp; luxury surfaces.
+            </h1>
 
-          <p className="hero-wall__subhead">
-            5,000+ curated designs across 50+ brands. See every tile in person at our showroom.
-          </p>
+            <p className="hero-wall__subhead hero-wall__subhead--left">
+              {business.stats.tileVariety.toLocaleString()}+ curated designs across{" "}
+              {business.stats.brandsStocked}+ brands. See every tile in person at our showroom.
+            </p>
 
-          <div className="hero-wall__cta-row">
-            <Link href="/contact" className="hero-wall__cta hero-wall__cta--primary">
-              Visit Our Showroom
-            </Link>
-            <a
-              href={waHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hero-wall__cta hero-wall__cta--wa"
-              aria-label="WhatsApp consultation"
-            >
-              WhatsApp Us
-            </a>
-            <a href={getCallLink()} className="hero-wall__cta hero-wall__cta--secondary">
-              Call {business.phoneDisplay}
-            </a>
-          </div>
+            <div className="hero-wall__cta-row hero-wall__cta-row--left">
+              <Link href="/contact" className="rd-btn rd-btn--primary-on-light">
+                Visit Our Showroom
+              </Link>
+              <a
+                href={waHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hero-wall__cta hero-wall__cta--wa"
+                aria-label="WhatsApp consultation"
+              >
+                <WhatsappLogo size={16} weight="fill" />
+                WhatsApp Us
+              </a>
+              <a href={getCallLink()} className="hero-wall__cta hero-wall__cta--secondary">
+                <Phone size={14} weight="bold" />
+                Call {business.phoneDisplay}
+              </a>
+            </div>
 
-          <div className="hero-wall__showroom-line">
-            Upper Bazar, Ranchi · Open today 10 AM – 8 PM · Free expert guidance
+            <div className="hero-wall__showroom-line">
+              <MapPin size={12} weight="bold" style={{ verticalAlign: "-1px", marginRight: 4 }} />
+              Upper Bazar, Ranchi &middot; Open today 10 AM &#8211; 8 PM
+            </div>
           </div>
         </div>
       </div>

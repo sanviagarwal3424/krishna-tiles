@@ -11,13 +11,18 @@ import {
 } from "@/data/tiles";
 import { business, getCallLink, getWhatsAppLink } from "@/data/business";
 
-const SITE_URL = "https://krishnatiles.com";
+const SITE_URL = "https://krishnatiles.in";
 
 export const metadata: Metadata = {
   title: "The Collection — Tiles, Sanitaryware & Surfaces | Krishna Tiles Ranchi",
   description:
     "Curated tiles, sanitaryware and luxury surfaces from Kajaria, Somany, Jaquar and more. Filter by space, style and surface — then visit our Upper Bazar, Ranchi showroom.",
   alternates: { canonical: "/products" },
+  openGraph: {
+    title: "The Collection — Tiles, Sanitaryware & Surfaces | Krishna Tiles Ranchi",
+    description: "Curated tiles, sanitaryware & luxury surfaces from Kajaria, Somany, Jaquar & more. Visit our Upper Bazar, Ranchi showroom.",
+    type: "website",
+  },
 };
 
 const CATEGORIES: Array<{ slug: string; label: string }> = [

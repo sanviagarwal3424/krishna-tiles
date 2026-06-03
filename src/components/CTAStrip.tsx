@@ -1,4 +1,5 @@
 import { business, getWhatsAppLink } from "@/data/business";
+import { Phone, WhatsappLogo, MapPin } from "@phosphor-icons/react/dist/ssr";
 
 type CTAStripProps = {
   variant?: "home" | "contact" | "products";
@@ -25,6 +26,7 @@ export default function CTAStrip({ variant = "home" }: CTAStripProps) {
         </div>
         <div className="cta-strip__ctas">
           <a href={`tel:${business.phone}`} className="rd-btn rd-btn--primary-on-dark">
+            <Phone size={16} weight="bold" />
             Call {business.phoneDisplay}
           </a>
           {variant !== "products" && (
@@ -34,6 +36,7 @@ export default function CTAStrip({ variant = "home" }: CTAStripProps) {
               rel="noopener noreferrer"
               className="rd-btn rd-btn--secondary-on-dark"
             >
+              <WhatsappLogo size={16} weight="fill" />
               WhatsApp
             </a>
           )}
@@ -44,6 +47,7 @@ export default function CTAStrip({ variant = "home" }: CTAStripProps) {
               rel="noopener noreferrer"
               className="rd-btn rd-btn--secondary-on-dark"
             >
+              <MapPin size={16} weight="bold" />
               Get Directions
             </a>
           )}

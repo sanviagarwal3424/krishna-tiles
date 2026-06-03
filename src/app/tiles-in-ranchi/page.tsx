@@ -10,6 +10,12 @@ export const metadata: Metadata = {
     "Looking for tiles in Ranchi? Krishna Tiles at Upper Bazar is Ranchi's #1 tile showroom. Floor tiles, wall tiles, bathroom tiles & sanitaryware. Visit us or call now.",
   keywords:
     "tiles in Ranchi, tile shop Ranchi, floor tiles Ranchi, bathroom tiles Ranchi, best tiles showroom Ranchi, buy tiles Ranchi",
+  alternates: { canonical: "/tiles-in-ranchi" },
+  openGraph: {
+    title: "Tiles in Ranchi — Best Tile Shop | Krishna Tiles",
+    description: "Ranchi's #1 tile showroom. Floor tiles, wall tiles, bathroom tiles & sanitaryware from 50+ brands. Upper Bazar, Ranchi.",
+    type: "website",
+  },
 };
 
 const localSchema = {
@@ -17,7 +23,7 @@ const localSchema = {
   "@type": "LocalBusiness",
   name: business.name,
   description: business.tagline,
-  url: "https://krishnatiles.com",
+  url: "https://krishnatiles.in",
   telephone: business.phone,
   email: business.email,
   address: {

@@ -1,9 +1,13 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { blogPosts, getBlogPostBySlug } from "@/data/blog";
 import CTAStrip from "@/components/CTAStrip";
-import { getWhatsAppLink } from "@/data/business";
+import JsonLd from "@/components/JsonLd";
+import { business, getWhatsAppLink } from "@/data/business";
+
+const SITE_URL = "https://krishnatiles.in";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -20,6 +24,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${post.title} | Krishna Tiles Blog`,
     description: post.excerpt,
+    alternates: { canonical: `/blog/${slug}` },
+    openGraph: {
+      title: `${post.title} | Krishna Tiles Blog`,
+      description: post.excerpt,
+      type: "article",
+      publishedTime: post.date,
+      authors: ["Krishna Tiles"],
+    },
   };
 }
 
@@ -28,8 +40,31 @@ export default async function BlogDetailPage({ params }: PageProps) {
   const post = getBlogPostBySlug(slug);
   if (!post) notFound();
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    author: { "@type": "Organization", name: business.name },
+    publisher: { "@type": "Organization", name: business.name, url: SITE_URL },
+    mainEntityOfPage: `${SITE_URL}/blog/${slug}`,
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+      { "@type": "ListItem", position: 3, name: post.title },
+    ],
+  };
+
   return (
     <>
+      <JsonLd data={articleSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <section className="section section--alt" style={{ paddingTop: "4rem" }}>
         <div className="container" style={{ maxWidth: "760px" }}>
           <div className="breadcrumb" style={{ marginBottom: "1.5rem" }}>
@@ -83,6 +118,28 @@ export default async function BlogDetailPage({ params }: PageProps) {
             }}
           >
             {post.content.split("\n").map((line, i) => {
+              const renderInline = (text: string) => {
+                const parts = text.split(/\*\*(.+?)\*\*/g);
+                if (parts.length === 1) return text;
+                return parts.map((part, j) =>
+                  j % 2 === 1 ? <strong key={j} style={{ color: "var(--color-text-primary)", fontWeight: 600 }}>{part}</strong> : part
+                );
+              };
+              const imgMatch = line.match(/^!\[(.+?)\]\((.+?)\)$/);
+              if (imgMatch) {
+                return (
+                  <figure key={i} style={{ margin: "1.5rem 0", borderRadius: "var(--radius-md)", overflow: "hidden" }}>
+                    <Image
+                      src={imgMatch[2]}
+                      alt={imgMatch[1]}
+                      width={760}
+                      height={450}
+                      style={{ width: "100%", height: "auto", objectFit: "cover", borderRadius: "var(--radius-md)" }}
+                      sizes="(max-width: 760px) 100vw, 760px"
+                    />
+                  </figure>
+                );
+              }
               if (line.startsWith("## ")) {
                 return (
                   <h2
@@ -94,7 +151,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
                       margin: "2rem 0 0.75rem",
                     }}
                   >
-                    {line.replace("## ", "")}
+                    {renderInline(line.replace("## ", ""))}
                   </h2>
                 );
               }
@@ -109,19 +166,19 @@ export default async function BlogDetailPage({ params }: PageProps) {
                       margin: "1.5rem 0 0.5rem",
                     }}
                   >
-                    {line.replace("### ", "")}
+                    {renderInline(line.replace("### ", ""))}
                   </h3>
                 );
               }
               if (line.startsWith("- ")) {
                 return (
                   <li key={i} style={{ marginBottom: "0.4rem", marginLeft: "1.25rem" }}>
-                    {line.replace("- ", "")}
+                    {renderInline(line.replace("- ", ""))}
                   </li>
                 );
               }
               if (line.trim() === "") return <br key={i} />;
-              return <p key={i} style={{ marginBottom: "1rem" }}>{line}</p>;
+              return <p key={i} style={{ marginBottom: "1rem" }}>{renderInline(line)}</p>;
             })}
           </div>
 

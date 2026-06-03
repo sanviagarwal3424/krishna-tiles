@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   title: "Tile Blog — Tips, Trends & Inspiration | Krishna Tiles Ranchi",
   description:
     "Expert tile buying guides, maintenance tips, and design inspiration for Indian homes. From Krishna Tiles, Ranchi's trusted tile showroom.",
+  alternates: { canonical: "/blog" },
+  openGraph: {
+    title: "Tile Blog — Tips, Trends & Inspiration | Krishna Tiles Ranchi",
+    description: "Expert tile buying guides, maintenance tips & design inspiration from Ranchi's trusted tile showroom.",
+    type: "website",
+  },
 };
 
 export default function BlogPage() {

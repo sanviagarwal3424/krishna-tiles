@@ -6,7 +6,7 @@ export const business = {
   phoneDisplay: "065135 51148",
   whatsapp: "919431101780",
   whatsappMessage: "Hi Krishna Tiles! I'm interested in your tile collection. Can you help me?",
-  email: "info@krishnatiles.com",
+  email: "info@krishnatiles.in",
   address: {
     line1: "Lalji Hirji Rd, Upper Bazar",
     city: "Ranchi",

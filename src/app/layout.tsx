@@ -6,7 +6,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import JsonLd from "@/components/JsonLd";
 import { business } from "@/data/business";
 
-const SITE_URL = "https://krishnatiles.com";
+const SITE_URL = "https://krishnatiles.in";
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
@@ -98,7 +98,6 @@ export const metadata: Metadata = {
     "bathroom fittings Ranchi",
     "Upper Bazar tile showroom",
   ],
-  alternates: { canonical: "/" },
   authors: [{ name: "Krishna Tiles" }],
   creator: "Krishna Tiles",
   publisher: "Krishna Tiles",

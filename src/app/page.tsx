@@ -11,6 +11,7 @@ import TrustSection from "@/components/TrustSection";
 import CTAStrip from "@/components/CTAStrip";
 import JsonLd from "@/components/JsonLd";
 import Transformations from "@/components/Transformations";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
   title:
@@ -50,10 +51,10 @@ const homeFaqSchema = {
 };
 
 const spaceCards = [
-  { slug: "living",  name: "Living Rooms", image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop" },
-  { slug: "bath",    name: "Bathrooms",    image: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?q=80&w=1200&auto=format&fit=crop" },
-  { slug: "kitchen", name: "Kitchens",     image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1200&auto=format&fit=crop" },
-  { slug: "outdoor", name: "Outdoors",     image: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=1200&auto=format&fit=crop" },
+  { slug: "living",  name: "Living Rooms", image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200&auto=format&fit=crop" },
+  { slug: "bath",    name: "Bathrooms",    image: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=1200&auto=format&fit=crop" },
+  { slug: "kitchen", name: "Kitchens",     image: "https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?q=80&w=1200&auto=format&fit=crop" },
+  { slug: "outdoor", name: "Outdoors",     image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop" },
 ];
 
 export default function HomePage() {
@@ -86,10 +87,12 @@ export default function HomePage() {
       </section>
 
       <section className="rd-section rd-section--light home-spaces">
+        <ScrollReveal>
         <header className="home-spaces__header">
           <p className="rd-eyebrow">Collections</p>
           <h2 className="rd-display">Shop by Space</h2>
         </header>
+        </ScrollReveal>
         <div className="home-spaces__grid">
           {spaceCards.map((c) => (
             <Link key={c.slug} href={`/products?category=${c.slug}`} className="home-spaces__card">
@@ -103,24 +106,36 @@ export default function HomePage() {
       </section>
 
       <section className="rd-section rd-section--dark home-featured">
+        <ScrollReveal>
         <header className="home-featured__header">
           <p className="rd-eyebrow">This Season</p>
           <h2 className="rd-display">Featured Collection</h2>
+          <p className="home-featured__sub">Hand-picked from our best-selling ranges — curated for Ranchi homes.</p>
         </header>
-        <div className="home-featured__grid">
-          {featured.map((tile) => (
-            <ProductCard key={tile.id} tile={tile} />
+        </ScrollReveal>
+        <div className="home-featured__bento">
+          {featured.slice(0, 1).map((tile) => (
+            <div key={tile.id} className="home-featured__hero">
+              <ProductCard tile={tile} priority />
+            </div>
           ))}
+          <div className="home-featured__rest">
+            {featured.slice(1).map((tile) => (
+              <ProductCard key={tile.id} tile={tile} />
+            ))}
+          </div>
         </div>
       </section>
 
       <Transformations />
 
       <section className="rd-section rd-section--light home-brands">
+        <ScrollReveal>
         <header className="home-brands__header">
           <p className="rd-eyebrow">Auth. Dealer &amp; Distributor</p>
           <h2 className="rd-display">Brands we carry</h2>
         </header>
+        </ScrollReveal>
         <div className="home-brands__grid">
           {business.brands.map((b) => (
             <div key={b} className="home-brands__cell">{b}</div>
@@ -129,10 +144,12 @@ export default function HomePage() {
       </section>
 
       <section className="rd-section rd-section--dark home-testimonials">
+        <ScrollReveal>
         <header className="home-testimonials__header">
           <p className="rd-eyebrow">Reviews</p>
           <h2 className="rd-display">What customers say</h2>
         </header>
+        </ScrollReveal>
         <div className="home-testimonials__grid">
           {testimonials.slice(0, 3).map((t) => (
             <TestimonialCard key={t.id} testimonial={t} variant="dark" />
@@ -143,10 +160,12 @@ export default function HomePage() {
       <TrustSection />
 
       <section className="rd-section rd-section--light home-faq">
+        <ScrollReveal>
         <header className="home-faq__header">
           <p className="rd-eyebrow">Good to Know</p>
           <h2 className="rd-display">Frequently asked</h2>
         </header>
+        </ScrollReveal>
         <div className="home-faq__list">
           {homeFaqs.map((f) => (
             <details key={f.q} className="home-faq__item">
