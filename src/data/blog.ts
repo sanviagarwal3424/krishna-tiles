@@ -427,6 +427,108 @@ Open Monday to Saturday, 10 AM – 8 PM
 
 WhatsApp us your room measurements and we'll send you a free quote with the best Kajaria tile options for your budget.`,
   },
+  {
+    slug: "best-bathroom-tiles-ranchi-2026",
+    title: "Best Bathroom Tiles in Ranchi 2026 — Top 5 Picks for Every Budget",
+    excerpt: "Planning a bathroom renovation in Ranchi? Here are the 5 best bathroom tiles across Kajaria, Somany, Johnson and Orient Bell — available at Krishna Tiles, Upper Bazar.",
+    category: "Buying Guide",
+    date: "2026-06-03",
+    readTime: "5 min read",
+    content: `## Best Bathroom Tiles in Ranchi 2026 — Top 5 Picks for Every Budget
+
+Your bathroom deserves the same design attention as your living room. The right tile can make a small bathroom feel spacious, a basic bathroom feel premium, and a wet room feel safe.
+
+At Krishna Tiles, we've helped hundreds of Ranchi families choose bathroom tiles over the last 20 years. Here are our top 5 picks for 2026 — covering floors, walls, and accents.
+
+## 1. Kajaria Anti-Skid Bathroom Floor Tile (Best for Safety)
+
+![Kajaria anti-skid matte bathroom floor tile](https://5.imimg.com/data5/GLADMIN/Default/2023/4/303435621/PQ/KG/XF/18432698/kajaria-anti-skid-bathroom-tiles-1000x1000.jpg)
+
+- **Size**: 300 × 300 mm / 600 × 600 mm
+- **Material**: Matte Porcelain
+- **Finish**: Anti-skid textured
+- **Best for**: Bathroom floors, wet areas, shower zones
+
+Safety first. Bathroom floors get wet every day, and a glossy tile here is an accident waiting to happen. Kajaria's anti-skid range gives you R10-R11 slip resistance without looking industrial. Available in stone-look, concrete-look, and neutral tones that pair well with any wall tile.
+
+**Price range**: ₹40–70/sq.ft at Krishna Tiles
+
+## 2. Somany Glossy Ceramic Wall Tile (Best for Bright Walls)
+
+![Somany glossy ceramic wall tiles for bathrooms](https://5.imimg.com/data5/SELLER/Default/2022/10/RH/EE/KY/28875807/somany-ceramic-wall-tiles-1000x1000.jpg)
+
+- **Size**: 300 × 600 mm
+- **Material**: Glossy Ceramic
+- **Finish**: High-gloss reflective
+- **Best for**: Bathroom walls, powder rooms, half-height dado
+
+Glossy wall tiles bounce light around the room, making even a 5x7 bathroom feel open. Somany's ceramic range comes in clean whites, soft beiges, and subtle patterns. The 300x600 format is the sweet spot for bathroom walls — large enough to look clean, small enough to handle curves and corners.
+
+**Price range**: ₹30–55/sq.ft at Krishna Tiles
+
+## 3. Johnson Decorative Bathroom Tile (Best for Character)
+
+![Johnson Tiles decorative glossy bathroom tile](https://5.imimg.com/data5/SELLER/Default/2022/5/WL/BG/YQ/31488137/whatsapp-image-2022-05-24-at-4-05-17-pm-1000x1000.jpeg)
+
+- **Size**: 300 × 600 mm / 300 × 450 mm
+- **Material**: Glazed Ceramic
+- **Finish**: Glossy with printed patterns
+- **Best for**: Accent walls, feature bands, shower niches
+
+If you want your bathroom to have personality, Johnson's decorative range delivers. Geometric patterns, floral motifs, and stone-effect prints add character without overwhelming the space. Use them as a single accent wall behind the basin or as a horizontal band at eye height — the rest of the walls in plain white.
+
+**Price range**: ₹35–65/sq.ft at Krishna Tiles
+
+## 4. Orient Bell Elevation Wall Tile (Best Budget Option)
+
+![Orient Bell ceramic wall tiles for bathroom elevation](https://5.imimg.com/data5/SELLER/Default/2022/2/YO/RJ/WD/9489120/orient-bell-wall-tiles-1000x1000.jpg)
+
+- **Size**: 300 × 450 mm / 300 × 600 mm
+- **Material**: Ceramic
+- **Finish**: Glossy / Satin
+- **Best for**: Full bathroom walls, rental properties, budget renovations
+
+Orient Bell gives you reliable quality at Ranchi's most affordable price point. Their bathroom wall tiles come in light colours — white, cream, ivory — that work with any floor tile. If you're renovating multiple bathrooms or working on a rental property where cost matters, this is the brand we recommend.
+
+**Price range**: ₹25–45/sq.ft at Krishna Tiles
+
+## 5. Kajaria Carrara White (Best Premium Pick)
+
+![Kajaria Carrara White glossy marble-look tile for luxury bathrooms](https://5.imimg.com/data5/GLADMIN/Default/2023/4/303435623/CD/VS/RE/18432698/kajaria-anti-skid-bathroom-tiles-1000x1000.jpg)
+
+- **Size**: 600 × 1200 mm
+- **Material**: Glazed Porcelain
+- **Finish**: Polished glossy
+- **Best for**: Master bathroom walls, spa-style bathrooms, feature walls
+
+For bathrooms that need to impress, the Carrara White is our top pick. The 600x1200 format with minimal grout lines creates a seamless marble wall effect. Pair it with a matte grey anti-skid floor tile for the classic luxury bathroom look. This is the tile interior designers in Ranchi request by name.
+
+**Price range**: ₹55–80/sq.ft at Krishna Tiles
+
+## Bathroom Tile Buying Checklist
+
+- **Floor tiles**: Always anti-skid (R10 minimum). Matte or textured finish. Never use polished tiles on bathroom floors
+- **Wall tiles**: Glossy or satin finish for easy cleaning and light reflection
+- **Grout colour**: Use epoxy grout in bathrooms — it resists mold and doesn't absorb water like cement grout
+- **Size guide**: 300x600mm for walls, 300x300mm for floors in standard bathrooms. Go larger (600x1200mm walls) in master bathrooms
+- **Buy 10% extra**: Cuts, breakage, and future repairs. Tile batches vary in shade
+
+## Why Buy Bathroom Tiles from Krishna Tiles?
+
+- **50+ brands** — Kajaria, Somany, Johnson, Orient Bell, Cera, RAK all under one roof
+- **Free design advice** — our team helps you pair wall and floor tiles that actually look good together
+- **Quantity calculator** — bring your bathroom measurements, we'll calculate exact boxes needed
+- **Same-day delivery** — within Ranchi city
+- **20+ years in Ranchi** — we know what works in local homes
+
+## Visit Our Showroom
+
+**Krishna Tiles**
+Lalji Hirji Road, Upper Bazar, Ranchi — 834001
+Open Monday to Saturday, 10 AM – 8 PM
+
+WhatsApp us your bathroom size and budget — we'll suggest the best wall + floor combination for you.`,
+  },
 ];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
